@@ -9,10 +9,12 @@ $TCA['tx_redirects_domain_model_redirect'] = array(
 		'showRecordFieldList' => 'hidden, title, source_domain, source_path, force_ssl, keep_get, target, header, exclude_ips, country_code, accept_language, user_agent, count, disable_count',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'hidden;;1, title, source_domain, source_path, force_ssl, keep_get, target, header, exclude_ips, country_code, accept_language, user_agent, count, disable_count,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'title, source_domain;;2, target;;3, header,--div--;LLL:EXT:redirects/Resources/Private/Language/locallang_db.xlf:tabs.client, country_code, accept_language, user_agent,--div--;LLL:EXT:redirects/Resources/Private/Language/locallang_db.xlf:tabs.redirectCount,count, disable_count,--div--;LLL:EXT:redirects/Resources/Private/Language/locallang_db.xlf:tabs.excludeIP, exclude_ips,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,hidden;;1'),
 	),
 	'palettes' => array(
-		'1' => array('showitem' => ''),
+		'1' => array('showitem' => 'starttime, endtime', 'canNotCollapse' => 1),
+		'2' => array('showitem' => 'source_path', 'canNotCollapse' => 1),
+		'3' => array('showitem' => 'force_ssl, keep_get', 'canNotCollapse' => 1),
 	),
 	'columns' => array(
 		't3ver_label' => array(

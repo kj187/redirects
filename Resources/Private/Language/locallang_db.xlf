@@ -46,7 +46,15 @@
 			<trans-unit id="tx_redirects_domain_model_redirect.disable_count">
 				<source>Disable Count</source>
 			</trans-unit>
-
+			<trans-unit id="tabs.redirectCount">
+				<source>Redirect Counter</source>
+			</trans-unit>
+			<trans-unit id="tabs.excludeIP">
+				<source>Exclude IP</source>
+			</trans-unit>
+			<trans-unit id="tabs.client">
+				<source>Client</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
