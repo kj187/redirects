@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2012-03-52T13:03:52Z" product-name="redirects">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_redirects_domain_model_redirect">
+				<source>Redirect</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.source_domain">
+				<source>Source Domain</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.source_path">
+				<source>Source Path</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.force_ssl">
+				<source>Force Ssl</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.keep_get">
+				<source>Keep Get</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.target">
+				<source>Target</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.header">
+				<source>Header</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.exclude_ips">
+				<source>Exclude Ips</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code">
+				<source>Country Code</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language">
+				<source>Accept Language</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.user_agent">
+				<source>User Agent</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.count">
+				<source>Count</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.disable_count">
+				<source>Disable Count</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

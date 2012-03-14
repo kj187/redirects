@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2012-03-52T13:03:52Z" product-name="redirects">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_redirects_domain_model_redirect">
+				<source>Redirect</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.title">
+				<source>Internal title</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.source_domain">
+				<source>Select a domain to redirect.</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.source_path">
+				<source>URL path</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.force_ssl">
+				<source>Force HTTPS</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.keep_get">
+				<source>Keep Url parameter</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.target">
+				<source>Target URL can be absolute or relative.</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.header">
+				<source>HTTP header to send with the redirect.</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.exclude_ips">
+				<source>List of excluded IP adresses</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code">
+				<source>If a client comes from the selected country (requires maxmind apache module)</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language">
+				<source>If a client accepts the selected language.</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.user_agent">
+				<source>If client is of lelected user agent type</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.count">
+				<source>Redirect count</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.disable_count">
+				<source>Disable redirect counter</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

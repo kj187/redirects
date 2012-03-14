@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2012-03-52T13:03:52Z" product-name="redirects">
+		<header/>
+		<body>
+
+			<trans-unit id="title.description">
+				<source>Internal title</source>
+			</trans-unit>
+			<trans-unit id="source_domain.description">
+				<source>Select a domain to redirect.</source>
+			</trans-unit>
+			<trans-unit id="source_path.description">
+				<source>URL path</source>
+			</trans-unit>
+			<trans-unit id="force_ssl.description">
+				<source>Force HTTPS</source>
+			</trans-unit>
+			<trans-unit id="keep_get.description">
+				<source>Keep Url parameter</source>
+			</trans-unit>
+			<trans-unit id="target.description">
+				<source>Target URL can be absolute or relative.</source>
+			</trans-unit>
+			<trans-unit id="header.description">
+				<source>HTTP header to send with the redirect.</source>
+			</trans-unit>
+			<trans-unit id="exclude_ips.description">
+				<source>List of excluded IP adresses</source>
+			</trans-unit>
+			<trans-unit id="country_code.description">
+				<source>If a client comes from the selected country (requires maxmind apache module)</source>
+			</trans-unit>
+			<trans-unit id="accept_language.description">
+				<source>If a client accepts the selected language.</source>
+			</trans-unit>
+			<trans-unit id="user_agent.description">
+				<source>If client is of lelected user agent type</source>
+			</trans-unit>
+			<trans-unit id="count.description">
+				<source>Redirect count</source>
+			</trans-unit>
+			<trans-unit id="disable_count.description">
+				<source>Disable redirect counter</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
