@@ -76,14 +76,16 @@ $TCA['tx_redirects_domain_model_redirect'] = array(
 		'source_domain' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.source_domain',
-			'config' => array(
+			'config' => array (
 				'type' => 'select',
-				'items' => array(
-					array('-- Label --', 0),
+				'items' => array (
+					array('', 0),
 				),
+				'foreign_table' => 'sys_domain',
+				'foreign_table_where' => 'ORDER BY pages.uid',
 				'size' => 1,
+				'minitems' => 0,
 				'maxitems' => 1,
-				'eval' => ''
 			),
 		),
 		'source_path' => array(
@@ -126,7 +128,10 @@ $TCA['tx_redirects_domain_model_redirect'] = array(
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
-					array('-- Label --', 0),
+					Array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.header.I.0', '301'),
+					Array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.header.I.1', '302'),
+					Array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.header.I.2', '303'),
+					Array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.header.I.3', '307'),
 				),
 				'size' => 1,
 				'maxitems' => 1,
@@ -144,28 +149,34 @@ $TCA['tx_redirects_domain_model_redirect'] = array(
 		),
 		'country_code' => array(
 			'exclude' => 1,
+			'displayCond' => 'EXT:static_info_tables:LOADED:true',
 			'label' => 'LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.country_code',
-			'config' => array(
+			'config' => array (
 				'type' => 'select',
-				'items' => array(
-					array('-- Label --', 0),
+				'items' => array (
+					array('', 0),
 				),
+				'foreign_table' => 'static_countries',
+				'foreign_table_where' => 'ORDER BY cn_short_en ASC',
 				'size' => 1,
+				'minitems' => 0,
 				'maxitems' => 1,
-				'eval' => ''
 			),
 		),
 		'accept_language' => array(
 			'exclude' => 1,
+			'displayCond' => 'EXT:static_info_tables:LOADED:true',
 			'label' => 'LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.accept_language',
-			'config' => array(
+			'config' => array (
 				'type' => 'select',
-				'items' => array(
-					array('-- Label --', 0),
+				'items' => array (
+					array('', 0),
 				),
+				'foreign_table' => 'static_languages',
+				'foreign_table_where' => 'ORDER BY lg_name_en ASC',
 				'size' => 1,
+				'minitems' => 0,
 				'maxitems' => 1,
-				'eval' => ''
 			),
 		),
 		'user_agent' => array(
@@ -174,7 +185,13 @@ $TCA['tx_redirects_domain_model_redirect'] = array(
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
-					array('-- Label --', 0),
+					array('', 0),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.apple', 1),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.android', 2),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.blackberry', 3),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.desktop', 4),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.smartPhone', 5),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.tablet', 6),
 				),
 				'size' => 1,
 				'maxitems' => 1,
@@ -185,9 +202,8 @@ $TCA['tx_redirects_domain_model_redirect'] = array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.count',
 			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
+				'type' => 'none',
+				'size' => 5,
 			),
 		),
 		'disable_count' => array(

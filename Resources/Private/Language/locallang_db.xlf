@@ -28,6 +28,18 @@
 			<trans-unit id="tx_redirects_domain_model_redirect.header">
 				<source>Header</source>
 			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.header.I.0">
+				<source>301 Moved Permanently</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.header.I.1">
+				<source>302 Found</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.header.I.2">
+				<source>303 See Other</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.header.I.3">
+				<source>307 Temporary Redirect</source>
+			</trans-unit>
 			<trans-unit id="tx_redirects_domain_model_redirect.exclude_ips">
 				<source>Exclude Ips</source>
 			</trans-unit>
@@ -39,6 +51,24 @@
 			</trans-unit>
 			<trans-unit id="tx_redirects_domain_model_redirect.user_agent">
 				<source>User Agent</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.user_agent.apple">
+				<source>Apple</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.user_agent.android">
+				<source>Android</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.user_agent.blackberry">
+				<source>Blackberry</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.user_agent.desktop">
+				<source>Desktop</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.user_agent.smartPhone">
+				<source>Smart Phone</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.user_agent.tablet">
+				<source>Tablet</source>
 			</trans-unit>
 			<trans-unit id="tx_redirects_domain_model_redirect.count">
 				<source>Count</source>
