@@ -18,9 +18,6 @@ t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Redirect Mana
 					'versioningWS' => 2,
 					'versioning_followPages' => TRUE,
 					'origUid' => 't3_origuid',
-					'languageField' => 'sys_language_uid',
-					'transOrigPointerField' => 'l10n_parent',
-					'transOrigDiffSourceField' => 'l10n_diffsource',
 					'delete' => 'deleted',
 					'enablecolumns' => array(
 						'disabled' => 'hidden',
