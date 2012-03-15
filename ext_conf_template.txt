@@ -1,0 +1,2 @@
+	# cat=basic; type=input; label=Page IDs where the redirects are stored.
+storagePid =

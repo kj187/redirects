@@ -29,39 +29,29 @@
  *
  * @package redirects
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ *
  */
-class Tx_Redirects_Controller_RedirectController extends Tx_Extbase_MVC_Controller_ActionController {
+class Tx_Redirects_Domain_Model_Request {
 
 	/**
-	 * redirectRepository
+	 * Returns the domain
 	 *
-	 * @var Tx_Redirects_Domain_Repository_RedirectRepository
+	 * @return string
 	 */
-	protected $redirectRepository;
-
-	/**
-	 * injectRedirectRepository
-	 *
-	 * @param Tx_Redirects_Domain_Repository_RedirectRepository $redirectRepository
-	 * @return void
-	 */
-	public function injectRedirectRepository(Tx_Redirects_Domain_Repository_RedirectRepository $redirectRepository) {
-		$this->redirectRepository = $redirectRepository;
+	public function getDomain() {
+		return t3lib_div::getIndpEnv('HTTP_HOST');
 	}
 
 	/**
-	 * action redirect
+	 * Returns the path without parameter
 	 *
-	 * @return void
+	 * @return string
 	 */
-	public function indexAction() {
-		error_log(__METHOD__, 0);
-		$request = new Tx_Redirects_Domain_Model_Request();
-		$redirects = $this->redirectRepository->findAll($request->getDomain(), $request->getPath());
-
-		foreach ($redirects as $redirect) {
-			error_log('redirect-title: ' . $redirect->getTitle(), 0);
-		}
+	public function getPath() {
+		$currentPath = t3lib_div::getIndpEnv('REQUEST_URI');
+		$tmp = explode('?', $currentPath, 2);
+			// return only the path without any parameter
+		return $tmp[0];
 	}
 
 }
