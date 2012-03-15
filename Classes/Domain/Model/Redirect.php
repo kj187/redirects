@@ -4,7 +4,7 @@
  *  Copyright notice
  *
  *  (c) 2012 Michael Klapper <development@morphodo.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -46,7 +46,7 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 * @var integer
 	 */
-	protected $sourceDomain;
+	protected $sourceDomain = 0;
 
 	/**
 	 * URL path
@@ -81,7 +81,7 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 * @var integer
 	 */
-	protected $header;
+	protected $header = 0;
 
 	/**
 	 * List of excluded IP adresses
@@ -95,28 +95,28 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 * @var integer
 	 */
-	protected $countryCode;
+	protected $countryCode = 0;
 
 	/**
 	 * If a client accepts the selected language.
 	 *
 	 * @var integer
 	 */
-	protected $acceptLanguage;
+	protected $acceptLanguage = 0;
 
 	/**
 	 * If client is of lelected user agent type
 	 *
 	 * @var integer
 	 */
-	protected $userAgent;
+	protected $userAgent = 0;
 
 	/**
 	 * Redirect count
 	 *
 	 * @var string
 	 */
-	protected $count;
+	protected $count = 0;
 
 	/**
 	 * Disable redirect counter
@@ -282,7 +282,7 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	 * @return string $excludeIps
 	 */
 	public function getExcludeIps() {
-		return $this->excludeIps;
+		return t3lib_div::trimExplode(',', $this->excludeIps, TRUE);
 	}
 
 	/**

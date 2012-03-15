@@ -4,7 +4,7 @@
  *  Copyright notice
  *
  *  (c) 2012 Michael Klapper <development@morphodo.com>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -37,6 +37,7 @@
  * @author Michael Klapper <development@morphodo.com>
  */
 class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
+
 	/**
 	 * @var Tx_Redirects_Domain_Model_Redirect
 	 */
@@ -58,7 +59,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @test
 	 */
-	public function setTitleForStringSetsTitle() { 
+	public function setTitleForStringSetsTitle() {
 		$this->fixture->setTitle('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -66,11 +67,12 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 			$this->fixture->getTitle()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getSourceDomainReturnsInitialValueForInteger() { 
+	public function getSourceDomainReturnsInitialValueForInteger() {
+
 		$this->assertSame(
 			0,
 			$this->fixture->getSourceDomain()
@@ -80,7 +82,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @test
 	 */
-	public function setSourceDomainForIntegerSetsSourceDomain() { 
+	public function setSourceDomainForIntegerSetsSourceDomain() {
 		$this->fixture->setSourceDomain(12);
 
 		$this->assertSame(
@@ -88,7 +90,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 			$this->fixture->getSourceDomain()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -97,7 +99,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @test
 	 */
-	public function setSourcePathForStringSetsSourcePath() { 
+	public function setSourcePathForStringSetsSourcePath() {
 		$this->fixture->setSourcePath('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -105,13 +107,13 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 			$this->fixture->getSourcePath()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getForceSslReturnsInitialValueForBoolean() { 
+	public function getForceSslReturnsInitialValueForBoolean() {
 		$this->assertSame(
-			TRUE,
+			FALSE,
 			$this->fixture->getForceSsl()
 		);
 	}
@@ -119,7 +121,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @test
 	 */
-	public function setForceSslForBooleanSetsForceSsl() { 
+	public function setForceSslForBooleanSetsForceSsl() {
 		$this->fixture->setForceSsl(TRUE);
 
 		$this->assertSame(
@@ -127,13 +129,13 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 			$this->fixture->getForceSsl()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getKeepGetReturnsInitialValueForBoolean() { 
+	public function getKeepGetReturnsInitialValueForBoolean() {
 		$this->assertSame(
-			TRUE,
+			FALSE,
 			$this->fixture->getKeepGet()
 		);
 	}
@@ -141,7 +143,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @test
 	 */
-	public function setKeepGetForBooleanSetsKeepGet() { 
+	public function setKeepGetForBooleanSetsKeepGet() {
 		$this->fixture->setKeepGet(TRUE);
 
 		$this->assertSame(
@@ -149,7 +151,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 			$this->fixture->getKeepGet()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -158,7 +160,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @test
 	 */
-	public function setTargetForStringSetsTarget() { 
+	public function setTargetForStringSetsTarget() {
 		$this->fixture->setTarget('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -166,11 +168,11 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 			$this->fixture->getTarget()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getHeaderReturnsInitialValueForInteger() { 
+	public function getHeaderReturnsInitialValueForInteger() {
 		$this->assertSame(
 			0,
 			$this->fixture->getHeader()
@@ -180,7 +182,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @test
 	 */
-	public function setHeaderForIntegerSetsHeader() { 
+	public function setHeaderForIntegerSetsHeader() {
 		$this->fixture->setHeader(12);
 
 		$this->assertSame(
@@ -188,28 +190,42 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 			$this->fixture->getHeader()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getExcludeIpsReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setExcludeIpsForStringSetsExcludeIps() { 
-		$this->fixture->setExcludeIps('Conceived at T3CON10');
-
+	public function getExcludeIpsReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
+			array(),
 			$this->fixture->getExcludeIps()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getCountryCodeReturnsInitialValueForInteger() { 
+	public function setExcludeIpsForStringSetsExcludeIps() {
+		$ipArray = array('127.0.0.1');
+		$this->fixture->setExcludeIps('127.0.0.1');
+
+		$this->assertSame(
+			$ipArray,
+			$this->fixture->getExcludeIps()
+		);
+
+		$ipArray = array('127.0.0.1', '127.0.0.2');
+		$this->fixture->setExcludeIps('127.0.0.1, 127.0.0.2');
+
+		$this->assertSame(
+			$ipArray,
+			$this->fixture->getExcludeIps()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getCountryCodeReturnsInitialValueForInteger() {
 		$this->assertSame(
 			0,
 			$this->fixture->getCountryCode()
@@ -219,7 +235,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @test
 	 */
-	public function setCountryCodeForIntegerSetsCountryCode() { 
+	public function setCountryCodeForIntegerSetsCountryCode() {
 		$this->fixture->setCountryCode(12);
 
 		$this->assertSame(
@@ -227,11 +243,11 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 			$this->fixture->getCountryCode()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getAcceptLanguageReturnsInitialValueForInteger() { 
+	public function getAcceptLanguageReturnsInitialValueForInteger() {
 		$this->assertSame(
 			0,
 			$this->fixture->getAcceptLanguage()
@@ -241,7 +257,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @test
 	 */
-	public function setAcceptLanguageForIntegerSetsAcceptLanguage() { 
+	public function setAcceptLanguageForIntegerSetsAcceptLanguage() {
 		$this->fixture->setAcceptLanguage(12);
 
 		$this->assertSame(
@@ -249,11 +265,11 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 			$this->fixture->getAcceptLanguage()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getUserAgentReturnsInitialValueForInteger() { 
+	public function getUserAgentReturnsInitialValueForInteger() {
 		$this->assertSame(
 			0,
 			$this->fixture->getUserAgent()
@@ -263,7 +279,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @test
 	 */
-	public function setUserAgentForIntegerSetsUserAgent() { 
+	public function setUserAgentForIntegerSetsUserAgent() {
 		$this->fixture->setUserAgent(12);
 
 		$this->assertSame(
@@ -271,16 +287,21 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 			$this->fixture->getUserAgent()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getCountReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setCountForStringSetsCount() { 
+	public function getCountReturnsInitialValueForString() {
+		$this->assertSame(
+			0,
+			$this->fixture->getCount()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setCountForStringSetsCount() {
 		$this->fixture->setCount('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -288,13 +309,13 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 			$this->fixture->getCount()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
-	public function getDisableCountReturnsInitialValueForBoolean() { 
+	public function getDisableCountReturnsInitialValueForBoolean() {
 		$this->assertSame(
-			TRUE,
+			FALSE,
 			$this->fixture->getDisableCount()
 		);
 	}
@@ -302,7 +323,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @test
 	 */
-	public function setDisableCountForBooleanSetsDisableCount() { 
+	public function setDisableCountForBooleanSetsDisableCount() {
 		$this->fixture->setDisableCount(TRUE);
 
 		$this->assertSame(
@@ -310,6 +331,6 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 			$this->fixture->getDisableCount()
 		);
 	}
-	
+
 }
 ?>
