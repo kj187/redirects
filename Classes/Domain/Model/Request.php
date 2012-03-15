@@ -34,6 +34,29 @@
 class Tx_Redirects_Domain_Model_Request {
 
 	/**
+	 * Only available if apache module maxmind is installed.
+	 *
+	 * @var string
+	 * @link http://www.maxmind.com/app/country
+	 */
+	protected $countryCode;
+
+	/**
+	 * @var string
+	 */
+	protected $acceptLanguage;
+
+	/**
+	 * @var string
+	 */
+	protected $remoteAddress;
+
+	/**
+	 * @var string
+	 */
+	protected $userAgent;
+
+	/**
 	 * @var string
 	 */
 	protected $domain;
@@ -49,6 +72,10 @@ class Tx_Redirects_Domain_Model_Request {
 	public function __construct() {
 		$this->setDomiain(t3lib_div::getIndpEnv('HTTP_HOST'));
 		$this->setPath(t3lib_div::getIndpEnv('REQUEST_URI'));
+		$this->setAcceptLanguage(t3lib_div::getIndpEnv('HTTP_ACCEPT_LANGUAGE'));
+		$this->setCountryCode(apache_note('GEOIP_COUNTRY_CODE'));
+		$this->setRemoteAddress(t3lib_div::getIndpEnv('REMOTE_ADDR'));
+		$this->setUserAgent(t3lib_div::getIndpEnv('HTTP_USER_AGENT'));
 	}
 
 	/**
@@ -85,5 +112,60 @@ class Tx_Redirects_Domain_Model_Request {
 		return $this->path;
 	}
 
+	/**
+	 * @param string $acceptLanguage
+	 */
+	public function setAcceptLanguage($acceptLanguage) {
+		$this->acceptLanguage = $acceptLanguage;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getAcceptLanguage() {
+		return $this->acceptLanguage;
+	}
+
+	/**
+	 * @param string $countryCode
+	 */
+	public function setCountryCode($countryCode) {
+		$this->countryCode = $countryCode;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getCountryCode() {
+		return $this->countryCode;
+	}
+
+	/**
+	 * @param string $remoteAddress
+	 */
+	public function setRemoteAddress($remoteAddress) {
+		$this->remoteAddress = $remoteAddress;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getRemoteAddress() {
+		return $this->remoteAddress;
+	}
+
+	/**
+	 * @param string $userAgent
+	 */
+	public function setUserAgent($userAgent) {
+		$this->userAgent = $userAgent;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getUserAgent() {
+		return $this->userAgent;
+	}
 }
 ?>
