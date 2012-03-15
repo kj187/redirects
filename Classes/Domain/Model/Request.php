@@ -34,12 +34,46 @@
 class Tx_Redirects_Domain_Model_Request {
 
 	/**
+	 * @var string
+	 */
+	protected $domain;
+
+	/**
+	 * @var string
+	 */
+	protected $path;
+
+	/**
+	 * Initialize Request arguments to
+	 */
+	public function __construct() {
+		$this->setDomiain(t3lib_div::getIndpEnv('HTTP_HOST'));
+		$this->setPath(t3lib_div::getIndpEnv('REQUEST_URI'));
+	}
+
+	/**
+	 * @param string $domain
+	 */
+	public function setDomiain($domain) {
+		$this->domain = $domain;
+	}
+
+	/**
 	 * Returns the domain
 	 *
 	 * @return string
 	 */
 	public function getDomain() {
-		return t3lib_div::getIndpEnv('HTTP_HOST');
+		return $this->domain;
+	}
+
+	/**
+	 * @param string $path
+	 */
+	public function setPath($path) {
+		$tmp = explode('?', $path, 2);
+			// return only the path without any parameter
+		$this->path = $tmp[0];
 	}
 
 	/**
@@ -48,10 +82,7 @@ class Tx_Redirects_Domain_Model_Request {
 	 * @return string
 	 */
 	public function getPath() {
-		$currentPath = t3lib_div::getIndpEnv('REQUEST_URI');
-		$tmp = explode('?', $currentPath, 2);
-			// return only the path without any parameter
-		return $tmp[0];
+		return $this->path;
 	}
 
 }
