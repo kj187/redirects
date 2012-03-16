@@ -36,26 +36,37 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persi
 	/**
 	 * Fetch all redirect records based on given $domain and $path property.
 	 *
-	 * @param string $domain
-	 * @param string $path
+	 * @param Tx_Redirects_Domain_Model_Request $request
 	 * @return array
 	 */
-	public function findAllByDomainAndPath($domain, $path) {
+	public function findAllByRequest(Tx_Redirects_Domain_Model_Request $request) {
 		$query = $this->createQuery();
 		$query->getQuerySettings()->getRespectEnableFields(TRUE);
 		$query->getQuerySettings()->getRespectSysLanguage(FALSE);
-		$originalPath    = $path;
-		$alternativePath = rtrim('/', $path);
-
+		$domainName       = $request->getDomain();
+		$originalPath     = $request->getPath();
+		$alternativePath  = rtrim($originalPath, '/');
 
 		return $query->statement('
 		SELECT *, IF(tx_redirects_domain_model_redirect.source_domain = "0",1,0) AS masked
 		FROM tx_redirects_domain_model_redirect
 		WHERE
-				(tx_redirects_domain_model_redirect.source_domain = "0" OR tx_redirects_domain_model_redirect.source_domain = (SELECT uid FROM sys_domain WHERE domainName = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($domain) . ') )
+				(tx_redirects_domain_model_redirect.source_domain = "0" OR tx_redirects_domain_model_redirect.source_domain = (SELECT uid FROM sys_domain WHERE domainName = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($domainName) . ') )
 			AND
 				(tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($originalPath) . ' OR tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($alternativePath) . ' )
 			AND hidden = 0 AND deleted = 0 ORDER BY masked ASC,force_ssl DESC LIMIT 5')->execute();
+	}
+
+	/**
+	 * @param Tx_Redirects_Domain_Model_Redirect $redirect
+	 *
+	 * @return void
+	 */
+	public function incrementCounter(Tx_Redirects_Domain_Model_Redirect $redirect) {
+		$query = $this->createQuery();
+		$query->getQuerySettings()->setReturnRawQueryResult(TRUE);
+
+		$query->statement('UPDATE tx_redirects_domain_model_redirect SET count = count + 1 WHERE uid = ' . $redirect->getUid())->execute();
 	}
 }
 ?>
