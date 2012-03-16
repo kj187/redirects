@@ -46,8 +46,1286 @@
 			<trans-unit id="tx_redirects_domain_model_redirect.country_code">
 				<source>Country Code</source>
 			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AF">
+				<source>Afghanistan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AL">
+				<source>Albania</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.DZ">
+				<source>Algeria</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AS">
+				<source>American Samoa</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AD">
+				<source>Andorra</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AO">
+				<source>Angola</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AI">
+				<source>Anguilla</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AQ">
+				<source>Antarctica</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AG">
+				<source>Antigua and Barbuda</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AR">
+				<source>Argentina</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AM">
+				<source>Armenia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AW">
+				<source>Aruba</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AU">
+				<source>Australia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AT">
+				<source>Austria</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AZ">
+				<source>Azerbaijan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BH">
+				<source>Bahrain</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BD">
+				<source>Bangladesh</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BB">
+				<source>Barbados</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BY">
+				<source>Belarus</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BE">
+				<source>Belgium</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BZ">
+				<source>Belize</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BJ">
+				<source>Benin</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BM">
+				<source>Bermuda</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BT">
+				<source>Bhutan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BO">
+				<source>Bolivia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BA">
+				<source>Bosnia and Herzegovina</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BW">
+				<source>Botswana</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BV">
+				<source>Bouvet Island</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BR">
+				<source>Brazil</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.IO">
+				<source>British Indian Ocean Territory</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.VG">
+				<source>British Virgin Islands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BN">
+				<source>Brunei</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BG">
+				<source>Bulgaria</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BF">
+				<source>Burkina Faso</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BI">
+				<source>Burundi</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.KH">
+				<source>Cambodia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CM">
+				<source>Cameroon</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CA">
+				<source>Canada</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CV">
+				<source>Cape Verde</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.KY">
+				<source>Cayman Islands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CF">
+				<source>Central African Republic</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TD">
+				<source>Chad</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CL">
+				<source>Chile</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CN">
+				<source>China</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CX">
+				<source>Christmas Island</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CC">
+				<source>Cocos (Keeling) Islands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CO">
+				<source>Colombia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.KM">
+				<source>Comoros</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CD">
+				<source>Congo</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CG">
+				<source>Congo-Brazzaville</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CK">
+				<source>Cook Islands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CR">
+				<source>Costa Rica</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CI">
+				<source>CÃ´te dâ€™Ivoire</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.HR">
+				<source>Croatia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CU">
+				<source>Cuba</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CY">
+				<source>Cyprus</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CZ">
+				<source>Czech Republic</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.DK">
+				<source>Denmark</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.DJ">
+				<source>Djibouti</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.DM">
+				<source>Dominica</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.DO">
+				<source>Dominican Republic</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.EC">
+				<source>Ecuador</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.EG">
+				<source>Egypt</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SV">
+				<source>El Salvador</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GQ">
+				<source>Equatorial Guinea</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.ER">
+				<source>Eritrea</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.EE">
+				<source>Estonia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.ET">
+				<source>Ethiopia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.FK">
+				<source>Falkland Islands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.FO">
+				<source>Faroes</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.FJ">
+				<source>Fiji</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.FI">
+				<source>Finland</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.FR">
+				<source>France</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GF">
+				<source>French Guiana</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PF">
+				<source>French Polynesia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TF">
+				<source>French Southern Territories</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GA">
+				<source>Gabon</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GM">
+				<source>Gambia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GE">
+				<source>Georgia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.DE">
+				<source>Germany</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GH">
+				<source>Ghana</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GI">
+				<source>Gibraltar</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GR">
+				<source>Greece</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GL">
+				<source>Greenland</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GD">
+				<source>Grenada</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GP">
+				<source>Guadeloupe</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GU">
+				<source>Guam</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GT">
+				<source>Guatemala</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GN">
+				<source>Guinea</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GW">
+				<source>Guinea-Bissau</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GY">
+				<source>Guyana</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.HT">
+				<source>Haiti</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.HM">
+				<source>Heard Island and McDonald Islands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.HN">
+				<source>Honduras</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.HK">
+				<source>Hong Kong SAR of China</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.HU">
+				<source>Hungary</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.IS">
+				<source>Iceland</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.IN">
+				<source>India</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.ID">
+				<source>Indonesia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.IR">
+				<source>Iran</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.IQ">
+				<source>Iraq</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.IE">
+				<source>Ireland</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.IL">
+				<source>Israel</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.IT">
+				<source>Italy</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.JM">
+				<source>Jamaica</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.JP">
+				<source>Japan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.JO">
+				<source>Jordan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.KZ">
+				<source>Kazakhstan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.KE">
+				<source>Kenya</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.KI">
+				<source>Kiribati</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.KW">
+				<source>Kuwait</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.KG">
+				<source>Kyrgyzstan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.LA">
+				<source>Laos</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.LV">
+				<source>Latvia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.LB">
+				<source>Lebanon</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.LS">
+				<source>Lesotho</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.LR">
+				<source>Liberia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.LY">
+				<source>Libya</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.LI">
+				<source>Liechtenstein</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.LT">
+				<source>Lithuania</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.LU">
+				<source>Luxembourg</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MO">
+				<source>Macao SAR of China</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MK">
+				<source>Macedonia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MG">
+				<source>Madagascar</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MW">
+				<source>Malawi</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MY">
+				<source>Malaysia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MV">
+				<source>Maldives</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.ML">
+				<source>Mali</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MT">
+				<source>Malta</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MH">
+				<source>Marshall Islands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MQ">
+				<source>Martinique</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MR">
+				<source>Mauritania</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MU">
+				<source>Mauritius</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.YT">
+				<source>Mayotte</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MX">
+				<source>Mexico</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.FM">
+				<source>Micronesia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MD">
+				<source>Moldova</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MC">
+				<source>Monaco</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MN">
+				<source>Mongolia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.ME">
+				<source>Montenegro</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MS">
+				<source>Montserrat</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MA">
+				<source>Morocco</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MZ">
+				<source>Mozambique</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MM">
+				<source>Myanmar</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.NA">
+				<source>Namibia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.NR">
+				<source>Nauru</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.NP">
+				<source>Nepal</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.NL">
+				<source>Netherlands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AN">
+				<source>Netherlands Antilles</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.NC">
+				<source>New Caledonia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.NZ">
+				<source>New Zealand</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.NI">
+				<source>Nicaragua</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.NE">
+				<source>Niger</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.NG">
+				<source>Nigeria</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.NU">
+				<source>Niue</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.NF">
+				<source>Norfolk Island</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.KP">
+				<source>North Korea</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.MP">
+				<source>Northern Marianas</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.NO">
+				<source>Norway</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.OM">
+				<source>Oman</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PK">
+				<source>Pakistan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PW">
+				<source>Palau</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PS">
+				<source>Palestine</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PA">
+				<source>Panama</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PG">
+				<source>Papua New Guinea</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PY">
+				<source>Paraguay</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PE">
+				<source>Peru</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PH">
+				<source>Philippines</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PN">
+				<source>Pitcairn Islands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PL">
+				<source>Poland</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PT">
+				<source>Portugal</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PR">
+				<source>Puerto Rico</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.QA">
+				<source>Qatar</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.RE">
+				<source>Reunion</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.RO">
+				<source>Romania</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.RU">
+				<source>Russia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.RW">
+				<source>Rwanda</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SH">
+				<source>Saint Helena</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.KN">
+				<source>Saint Kitts and Nevis</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.LC">
+				<source>Saint Lucia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.PM">
+				<source>Saint Pierre and Miquelon</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.VC">
+				<source>Saint Vincent and the Grenadines</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.WS">
+				<source>Samoa</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SM">
+				<source>San Marino</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.ST">
+				<source>SÃ£o TomÃ© e PrÃ­ncipe</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SA">
+				<source>Saudi Arabia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SN">
+				<source>Senegal</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.RS">
+				<source>Serbia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CS">
+				<source>Serbia and Montenegro</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SC">
+				<source>Seychelles</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SL">
+				<source>Sierra Leone</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SG">
+				<source>Singapore</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SK">
+				<source>Slovakia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SI">
+				<source>Slovenia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SB">
+				<source>Solomon Islands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SO">
+				<source>Somalia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.ZA">
+				<source>South Africa</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GS">
+				<source>South Georgia and the South Sandwich Islands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.KR">
+				<source>South Korea</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.ES">
+				<source>Spain</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.LK">
+				<source>Sri Lanka</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SD">
+				<source>Sudan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SR">
+				<source>Suriname</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SJ">
+				<source>Svalbard</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SZ">
+				<source>Swaziland</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SE">
+				<source>Sweden</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.CH">
+				<source>Switzerland</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.SY">
+				<source>Syria</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TW">
+				<source>Taiwan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TJ">
+				<source>Tajikistan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TZ">
+				<source>Tanzania</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TH">
+				<source>Thailand</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.BS">
+				<source>The Bahamas</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TL">
+				<source>Timor-Leste</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TG">
+				<source>Togo</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TK">
+				<source>Tokelau</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TO">
+				<source>Tonga</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TT">
+				<source>Trinidad and Tobago</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TN">
+				<source>Tunisia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TR">
+				<source>Turkey</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TM">
+				<source>Turkmenistan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TC">
+				<source>Turks and Caicos Islands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.TV">
+				<source>Tuvalu</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.UG">
+				<source>Uganda</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.UA">
+				<source>Ukraine</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.AE">
+				<source>United Arab Emirates</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.GB">
+				<source>United Kingdom</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.US">
+				<source>United States</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.UM">
+				<source>United States Minor Outlying Islands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.UY">
+				<source>Uruguay</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.VI">
+				<source>US Virgin Islands</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.UZ">
+				<source>Uzbekistan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.VU">
+				<source>Vanuatu</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.VA">
+				<source>Vatican City</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.VE">
+				<source>Venezuela</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.VN">
+				<source>Vietnam</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.WF">
+				<source>Wallis and Futuna</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.EH">
+				<source>Western Sahara</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.YE">
+				<source>Yemen</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.ZM">
+				<source>Zambia</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.country_code.ZW">
+				<source>Zimbabwe</source>
+			</trans-unit>
 			<trans-unit id="tx_redirects_domain_model_redirect.accept_language">
 				<source>Accept Language</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.AB">
+				<source>Abkhazian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.AA">
+				<source>Afar</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.AF">
+				<source>Afrikaans</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SQ">
+				<source>Albanian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.AM">
+				<source>Amharic</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.AR">
+				<source>Arabic</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.HY">
+				<source>Armenian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.AS">
+				<source>Assamese</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.AY">
+				<source>Aymara</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.AZ">
+				<source>Azerbaijani</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.BA">
+				<source>Bashkir</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.EU">
+				<source>Basque</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.BN">
+				<source>Bengali</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.DZ">
+				<source>Dzongkha</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.BH">
+				<source>Bihari</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.BI">
+				<source>Bislama</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.BR">
+				<source>Breton</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.BG">
+				<source>Bulgarian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.MY">
+				<source>Burmese</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.BE">
+				<source>Belarusian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KM">
+				<source>Khmer</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.CA">
+				<source>Catalan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.ZA">
+				<source>Zhuang</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.ZH">
+				<source>Chinese (Traditional)</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.CO">
+				<source>Corsican</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.HR">
+				<source>Croatian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.CS">
+				<source>Czech</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.DA">
+				<source>Danish</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.NL">
+				<source>Dutch</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.EN">
+				<source>English</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.EO">
+				<source>Esperanto</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.ET">
+				<source>Estonian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.FO">
+				<source>Faeroese</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.FA">
+				<source>Persian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.FJ">
+				<source>Fijian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.FI">
+				<source>Finnish</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.FR">
+				<source>French</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.FY">
+				<source>Frisian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.GL">
+				<source>Galician</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.GD">
+				<source>Scottish Gaelic</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.GV">
+				<source>Manx</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KA">
+				<source>Georgian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.DE">
+				<source>German</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.EL">
+				<source>Greek</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KL">
+				<source>Greenlandic</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.GN">
+				<source>GuaranÃ­</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.GU">
+				<source>Gujarati</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.HA">
+				<source>Hausa</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.HE">
+				<source>Hebrew</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.HI">
+				<source>Hindi</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.HU">
+				<source>Hungarian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.IS">
+				<source>Icelandic</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.ID">
+				<source>Indonesian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.IA">
+				<source>Interlingua</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.IE">
+				<source>Interlingue</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.IU">
+				<source>Inuktitut</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.IK">
+				<source>Inupiaq</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.GA">
+				<source>Irish</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.IT">
+				<source>Italian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.JA">
+				<source>Japanese</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KN">
+				<source>Kannada</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KS">
+				<source>Kashmiri</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KK">
+				<source>Kazakh</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.RW">
+				<source>Kinyarwanda</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KY">
+				<source>Kirghiz</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.RN">
+				<source>Kirundi</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KO">
+				<source>Korean</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KU">
+				<source>Kurdish</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.LO">
+				<source>Lao</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.LA">
+				<source>Latin</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.LV">
+				<source>Latvian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.LN">
+				<source>Lingala</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.LT">
+				<source>Lithuanian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.MK">
+				<source>Macedonian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.MG">
+				<source>Malagasy</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.MS">
+				<source>Malay</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.ML">
+				<source>Malayalam</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.MT">
+				<source>Maltese</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.MI">
+				<source>M?ori</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.MR">
+				<source>Marathi</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.MO">
+				<source>Moldavian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.MN">
+				<source>Mongolian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.NA">
+				<source>Nauru</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.NE">
+				<source>Nepali</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.NO">
+				<source>Norwegian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.OC">
+				<source>Occitan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.OR">
+				<source>Oriya</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.OM">
+				<source>Oromo</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.PS">
+				<source>Pashto</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.PL">
+				<source>Polish</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.PT">
+				<source>Portuguese</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.PA">
+				<source>Punjabi</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.QU">
+				<source>Quechua</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.RM">
+				<source>Rhaeto-Romance</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.RO">
+				<source>Romanian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.RU">
+				<source>Russian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SM">
+				<source>Samoan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SG">
+				<source>Sango</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SA">
+				<source>Sanskrit</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SR">
+				<source>Serbian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.ST">
+				<source>Sesotho</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TN">
+				<source>Setswana</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SN">
+				<source>Shona</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SD">
+				<source>Sindhi</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SI">
+				<source>Sinhala</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SS">
+				<source>Swati</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SK">
+				<source>Slovak</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SL">
+				<source>Slovenian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SO">
+				<source>Somali</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.ES">
+				<source>Spanish</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SU">
+				<source>Sundanese</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SW">
+				<source>Swahili</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SV">
+				<source>Swedish</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TL">
+				<source>Tagalog</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TG">
+				<source>Tajik</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TA">
+				<source>Tamil</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TT">
+				<source>Tatar</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TE">
+				<source>Telugu</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TH">
+				<source>Thai</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.BO">
+				<source>Tibetan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TI">
+				<source>Tigrinya</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TO">
+				<source>Tongan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TS">
+				<source>Tsonga</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TR">
+				<source>Turkish</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TK">
+				<source>Turkmen</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TW">
+				<source>Twi</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.UG">
+				<source>Uyghur</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.UK">
+				<source>Ukrainian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.UR">
+				<source>Urdu</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.UZ">
+				<source>Uzbek</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.VI">
+				<source>Vietnamese</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.VO">
+				<source>VolapÃ¼k</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.CY">
+				<source>Welsh</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.WO">
+				<source>Wolof</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.XH">
+				<source>Xhosa</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.YI">
+				<source>Yiddish</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.YO">
+				<source>Yoruba</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.ZU">
+				<source>Zulu</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.BS">
+				<source>Bosnian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.AE">
+				<source>Avestan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.AK">
+				<source>Akan</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.AN">
+				<source>Aragonese</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.AV">
+				<source>Avar</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.BM">
+				<source>Bambara</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.CE">
+				<source>Chechen</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.CH">
+				<source>Chamorro</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.CR">
+				<source>Cree</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.CU">
+				<source>Church Slavonic</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.CV">
+				<source>Chuvash</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.DV">
+				<source>Dhivehi</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.EE">
+				<source>Ewe</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.FF">
+				<source>Fula</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.HO">
+				<source>Hiri motu</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.HT">
+				<source>HaÃ¯tian Creole</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.HZ">
+				<source>Herero</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.IG">
+				<source>Igbo</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.II">
+				<source>Yi</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.IO">
+				<source>Ido</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.JV">
+				<source>Javanese</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KG">
+				<source>Kongo</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KI">
+				<source>Kikuyu</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KJ">
+				<source>Kuanyama</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KR">
+				<source>Kanuri</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KV">
+				<source>Komi</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.KW">
+				<source>Cornish</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.LB">
+				<source>Luxembourgish</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.LG">
+				<source>Luganda</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.LI">
+				<source>Limburgish</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.LU">
+				<source>Luba-Katanga</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.MH">
+				<source>Marshallese</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.NB">
+				<source>Norwegian BokmÃ¥l</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.ND">
+				<source>North Ndebele</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.NG">
+				<source>Ndonga</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.NN">
+				<source>Norwegian Nynorsk</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.NR">
+				<source>South Ndebele</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.NV">
+				<source>Navajo</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.NY">
+				<source>Chichewa</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.OJ">
+				<source>Ojibwa</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.OS">
+				<source>Ossetic</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.PI">
+				<source>Pali</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SC">
+				<source>Sardinian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.SE">
+				<source>Northern Sami</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.TY">
+				<source>Tahitian</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.VE">
+				<source>Venda</source>
+			</trans-unit>
+			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.WA">
+				<source>Walloon</source>
 			</trans-unit>
 			<trans-unit id="tx_redirects_domain_model_redirect.user_agent">
 				<source>User Agent</source>
