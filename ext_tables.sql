@@ -14,10 +14,10 @@ CREATE TABLE tx_redirects_domain_model_redirect (
 	target varchar(255) DEFAULT '' NOT NULL,
 	header int(11) DEFAULT '0' NOT NULL,
 	exclude_ips varchar(255) DEFAULT '' NOT NULL,
-	country_code int(11) DEFAULT '0' NOT NULL,
-	accept_language int(11) DEFAULT '0' NOT NULL,
+	country_code varchar(255) DEFAULT '' NOT NULL,
+	accept_language varchar(255) DEFAULT '' NOT NULL,
 	user_agent int(11) DEFAULT '0' NOT NULL,
-	count varchar(255) DEFAULT '' NOT NULL,
+	count int(11) DEFAULT '0' NOT NULL,
 	disable_count tinyint(1) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
