@@ -66,7 +66,8 @@ class Tx_Requests_Servic_DeviceDetectionTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @test
 	 * @dataProvider androidDeviceCouldBeDetectedDataProvider
 	 * @param striog $userAgentString
-	 */
+     * @return void
+     */
 	public function androidDeviceCouldBeDetected($userAgentString) {
 		$this->fixture->setUserAgent($userAgentString);
 
@@ -87,7 +88,8 @@ class Tx_Requests_Servic_DeviceDetectionTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @test
 	 * @dataProvider appleDeviceCouldBeDetectedDataProvider
 	 * @param striog $userAgentString
-	 */
+     * @return void
+     */
 	public function appleDeviceCouldBeDetected($userAgentString) {
 		$this->fixture->setUserAgent($userAgentString);
 
@@ -108,7 +110,8 @@ class Tx_Requests_Servic_DeviceDetectionTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @test
 	 * @dataProvider blackberryDeviceCouldBeDetectedDataProvider
 	 * @param striog $userAgentString
-	 */
+     * @return void
+     */
 	public function blackberryDeviceCouldBeDetected($userAgentString) {
 		$this->fixture->setUserAgent($userAgentString);
 
@@ -129,7 +132,8 @@ class Tx_Requests_Servic_DeviceDetectionTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @test
 	 * @dataProvider desktopDeviceCouldBeDetectedDataProvider
 	 * @param striog $userAgentString
-	 */
+     * @return void
+     */
 	public function desktopDeviceCouldBeDetected($userAgentString) {
 		$this->fixture->setUserAgent($userAgentString);
 
@@ -150,7 +154,8 @@ class Tx_Requests_Servic_DeviceDetectionTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @test
 	 * @dataProvider kindleDeviceCouldBeDetectedDataProvider
 	 * @param striog $userAgentString
-	 */
+     * @return void
+     */
 	public function kindleDeviceCouldBeDetected($userAgentString) {
 		$this->fixture->setUserAgent($userAgentString);
 
@@ -170,7 +175,8 @@ class Tx_Requests_Servic_DeviceDetectionTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @test
 	 * @dataProvider smartPhoneDeviceCouldBeDetectedDataProvider
 	 * @param striog $userAgentString
-	 */
+     * @return void
+     */
 	public function smartPhoneDeviceCouldBeDetected($userAgentString) {
 		$this->markTestIncomplete('This test has no test data defined.');
 		$this->fixture->setUserAgent($userAgentString);
@@ -191,7 +197,8 @@ class Tx_Requests_Servic_DeviceDetectionTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @test
 	 * @dataProvider tabletDeviceCouldBeDetectedDataProvider
 	 * @param striog $userAgentString
-	 */
+     * @return void
+     */
 	public function tabletDeviceCouldBeDetected($userAgentString) {
 		$this->fixture->setUserAgent($userAgentString);
 
@@ -211,7 +218,8 @@ class Tx_Requests_Servic_DeviceDetectionTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @test
 	 * @dataProvider touchDeviceCouldBeDetectedDataProvider
 	 * @param striog $userAgentString
-	 */
+     * @return void
+     */
 	public function touchDeviceCouldBeDetected($userAgentString) {
 		$this->markTestIncomplete('This test has no test data defined.');
 		$this->fixture->setUserAgent($userAgentString);

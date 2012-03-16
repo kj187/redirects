@@ -51,20 +51,16 @@ class Tx_Redirects_Service_RedirectFactory {
 	}
 
 	/**
-	 * @var Tx_Extbase_Persistence_QueryResult<Tx_Redirects_Domain_Model_Redirect>
-	 */
-	protected $redirects;
-
-	/**
 	 * @var Tx_Redirects_Domain_Model_Request
 	 */
 	protected $request;
 
-	/**
-	 * @param Tx_Redirects_Domain_Model_Request $request
-	 * @param Tx_Redirects_Service_DeviceDetection $deviceDetection
-	 * @return Tx_Redirects_Domain_Model_Redirect
-	 */
+    /**
+     * @param Tx_Redirects_Domain_Model_Request $request
+     * @param Tx_Redirects_Service_DeviceDetection $deviceDetection
+     * @throws Exception
+     * @return Tx_Redirects_Domain_Model_Redirect
+     */
 	public function create(Tx_Redirects_Domain_Model_Request $request, Tx_Redirects_Service_DeviceDetection $deviceDetection) {
 		$redirects = $this->redirectRepository->findAllByRequest($request);
 		$deviceDetection->setUserAgent($request->getUserAgent());
