@@ -71,10 +71,11 @@ class Tx_Redirects_Controller_RedirectController extends Tx_Extbase_MVC_Controll
 	 */
 	public function indexAction() {
 		error_log(__METHOD__, 0);
-		$redirects = $this->redirectRepository->findAllByDomainAndPath($this->requestModel->getDomain(), $this->requestModel->getPath());
+		$redirects = $this->redirectRepository->findAllByRequest($this->requestModel);
 
 		foreach ($redirects as $redirect) {
 			error_log('redirect-title: ' . $redirect->getTitle(), 0);
+			$this->redirectRepository->incrementCounter($redirect);
 		}
 		error_log('redirect-title: ' . count($redirects), 0); exit();
 	}
