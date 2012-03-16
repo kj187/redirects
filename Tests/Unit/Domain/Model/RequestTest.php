@@ -62,5 +62,87 @@ class Tx_Requests_Domain_Model_RequestTest extends Tx_Extbase_Tests_Unit_BaseTes
 			$this->fixture->getRemoteAddress()
 		);
 	}
+
+	/**
+	 * @test
+	 */
+	public function setParametersForArraySetsParameters() {
+		$this->fixture->setParmeters(array(
+			'id' => 2,
+			'day' => 'friday',
+			'weather' => 'nice',
+		));
+
+			// expected that "id" are unseted
+		$this->assertSame(
+			array(
+				'day' => 'friday',
+				'weather' => 'nice',
+			),
+			$this->fixture->getParameters()
+		);
+
+			// expected that "id" and "parameterWithTooLongValue" are unseted
+		$this->fixture->setParmeters(array(
+			'id' => 2,
+			'day' => 'friday',
+			'weather' => 'nice',
+			'parameterWithTooLongValue' => str_pad('', Tx_Redirects_Domain_Model_Request::MAX_PARAM_LENGTH + 1, "."),
+		));
+
+		$this->assertSame(
+			array(
+				'day' => 'friday',
+				'weather' => 'nice',
+			),
+			$this->fixture->getParameters()
+		);
+
+			// expected that "id" and "parameterWithEmptyValue" are unseted
+		$this->fixture->setParmeters(array(
+			'id' => 2,
+			'day' => 'friday',
+			'weather' => 'nice',
+			'parameterWithEmptyValue' => '',
+		));
+
+		$this->assertSame(
+			array(
+				'day' => 'friday',
+				'weather' => 'nice',
+			),
+			$this->fixture->getParameters()
+		);
+	}
+
+	/**
+	 * @return array
+	 */
+	public function setAcceptedLanguageStringForAcceptedLanguageDataProvider() {
+		return array(
+			array('de-DE,de;q=0.8,en-US;q=0.9,en;q=0.4', 'DE'), // google chrome
+			array('en-us,en;q=0.5', 'EN'), // Mozilla
+			array('en-US,en;q=0.9', 'EN'), // Opera
+			array('en-us', 'en'), // Internet Explorer
+			array('en', 'EN'), // Lynx
+			array('da, en-gb;q=0.8, en;q=0.7', 'EN'),
+			array('en-US', 'EN'),
+		);
+	}
+
+	/**
+	 * @test
+	 * @param string $clientLanguageString
+	 * @param string $expectedLanguageDetected
+	 * @dataProvider setAcceptedLanguageStringForAcceptedLanguageDataProvider
+	 */
+	public function setAcceptedLanguageStringForAcceptedLanguage($clientLanguageString, $expectedLanguageDetected) {
+		$this->fixture->setAcceptLanguage($clientLanguageString);
+
+		$this->assertEquals(
+			$expectedLanguageDetected,
+			$this->fixture->getAcceptLanguage()
+		);
+	}
 }
 ?>

@@ -34,6 +34,13 @@
 class Tx_Redirects_Domain_Model_Request {
 
 	/**
+	 * Max parameter value length
+	 *
+	 * @var integer
+	 */
+	const MAX_PARAM_LENGTH = 60;
+
+	/**
 	 * Only available if apache module maxmind is installed.
 	 *
 	 * @var string
@@ -67,6 +74,11 @@ class Tx_Redirects_Domain_Model_Request {
 	protected $path;
 
 	/**
+	 * @var array
+	 */
+	protected $parameters = array();
+
+	/**
 	 * Initialize Request arguments to
 	 */
 	public function __construct() {
@@ -76,6 +88,7 @@ class Tx_Redirects_Domain_Model_Request {
 		$this->setCountryCode(apache_note('GEOIP_COUNTRY_CODE'));
 		$this->setRemoteAddress(t3lib_div::getIndpEnv('REMOTE_ADDR'));
 		$this->setUserAgent(t3lib_div::getIndpEnv('HTTP_USER_AGENT'));
+		$this->setParmeters(t3lib_div::_GET());
 	}
 
 	/**
@@ -114,9 +127,31 @@ class Tx_Redirects_Domain_Model_Request {
 
 	/**
 	 * @param string $acceptLanguage
+	 * @link http://www.dyeager.org/blog/2008/10/getting-browser-default-language-php.html
 	 */
 	public function setAcceptLanguage($acceptLanguage) {
-		$this->acceptLanguage = $acceptLanguage;
+
+		if (isset($acceptLanguage) && strlen($acceptLanguage) > 1) {
+			$matches = array();
+			$languageStruct = t3lib_div::trimExplode(',', $acceptLanguage);
+
+			foreach ($languageStruct as $value) {
+					// check for q-value and create associative array. No q-value means 1 by rule
+				if(preg_match("/(.*);q=([0-1]{0,1}\.\d{0,4})/i", $value, $matches)) {
+					$lang[$matches[1]] = (float)$matches[2];
+				} else {
+					$lang[$value] = 1.0;
+				}
+			}
+
+			$qval = 0.0;
+			foreach ($lang as $key => $value) {
+				if ($value > $qval) {
+					$qval = (float)$value;
+					$this->acceptLanguage = strtoupper($key);
+				}
+			}
+		}
 	}
 
 	/**
@@ -166,6 +201,33 @@ class Tx_Redirects_Domain_Model_Request {
 	 */
 	public function getUserAgent() {
 		return $this->userAgent;
+	}
+
+	/**
+	 * @param array $parameters
+	 * @return void
+	 */
+	public function setParmeters(array $parameters) {
+		unset($parameters['id']);
+		unset($parameters['type']);
+		unset($parameters['no_cache']);
+		unset($parameters['cHash']);
+		unset($parameters['chash']);
+
+		foreach ($parameters as $k => $v) {
+			if ($parameters[$k] == '' || $parameters[$k] === 0 || strlen($parameters[$k]) > self::MAX_PARAM_LENGTH) {
+				unset($parameters[$k]);
+			}
+		}
+
+		$this->parameters = $parameters;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getParameters() {
+		return $this->parameters;
 	}
 }
 ?>
