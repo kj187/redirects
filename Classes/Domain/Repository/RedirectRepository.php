@@ -33,5 +33,29 @@
  */
 class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persistence_Repository {
 
+	/**
+	 * Fetch all redirect records based on given $domain and $path property.
+	 *
+	 * @param string $domain
+	 * @param string $path
+	 * @return array
+	 */
+	public function findAllByDomainAndPath($domain, $path) {
+		$query = $this->createQuery();
+		$query->getQuerySettings()->getRespectEnableFields(TRUE);
+		$query->getQuerySettings()->getRespectSysLanguage(FALSE);
+		$originalPath    = $path;
+		$alternativePath = rtrim('/', $path);
+
+
+		return $query->statement('
+		SELECT *, IF(tx_redirects_domain_model_redirect.source_domain = "0",1,0) AS masked
+		FROM tx_redirects_domain_model_redirect
+		WHERE
+				(tx_redirects_domain_model_redirect.source_domain = "0" OR tx_redirects_domain_model_redirect.source_domain = (SELECT uid FROM sys_domain WHERE domainName = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($domain) . ') )
+			AND
+				(tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($originalPath) . ' OR tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($alternativePath) . ' )
+			AND hidden = 0 AND deleted = 0 ORDER BY masked ASC,force_ssl DESC LIMIT 5')->execute();
+	}
 }
 ?>
