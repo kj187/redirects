@@ -40,6 +40,11 @@ class Tx_Redirects_Controller_RedirectController extends Tx_Extbase_MVC_Controll
 	protected $redirectRepository;
 
 	/**
+	 * @var Tx_Redirects_Domain_Model_Request
+	 */
+	protected $requestModel;
+
+	/**
 	 * injectRedirectRepository
 	 *
 	 * @param Tx_Redirects_Domain_Repository_RedirectRepository $redirectRepository
@@ -50,18 +55,28 @@ class Tx_Redirects_Controller_RedirectController extends Tx_Extbase_MVC_Controll
 	}
 
 	/**
+	 * injectRedirectRepository
+	 *
+	 * @param Tx_Redirects_Domain_Model_Request $requestModel
+	 * @return void
+	 */
+	public function injectRequest(Tx_Redirects_Domain_Model_Request $requestModel) {
+		$this->requestModel = $requestModel;
+	}
+
+	/**
 	 * action redirect
 	 *
 	 * @return void
 	 */
 	public function indexAction() {
 		error_log(__METHOD__, 0);
-		$request = new Tx_Redirects_Domain_Model_Request();
-		$redirects = $this->redirectRepository->findAll($request->getDomain(), $request->getPath());
+		$redirects = $this->redirectRepository->findAllByDomainAndPath($this->requestModel->getDomain(), $this->requestModel->getPath());
 
 		foreach ($redirects as $redirect) {
 			error_log('redirect-title: ' . $redirect->getTitle(), 0);
 		}
+		error_log('redirect-title: ' . count($redirects), 0); exit();
 	}
 
 }
