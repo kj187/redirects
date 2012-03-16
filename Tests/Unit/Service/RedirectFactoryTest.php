@@ -54,7 +54,7 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 	protected $deviceDetection;
 
 	public function setUp() {
-		$this->fixture = new Tx_Redirects_Service_RedirectFactory();
+        $this->fixture = new Tx_Redirects_Service_RedirectFactory();
 		$this->request = $this->getMock('Tx_Redirects_Domain_Model_Request');
 		$this->deviceDetection = $this->getMock('Tx_Redirects_Service_DeviceDetection');
 	}
@@ -63,6 +63,16 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		unset($this->fixture);
 	}
 
-
+    /**
+     * @test
+     * @expectedException Exception
+     * @return void
+     */
+    public function throwsException() {
+        $redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+        $redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array()));
+        $this->fixture->injectRedirectRepository($redirectRepository);
+        $this->fixture->create($this->request, $this->deviceDetection);
+    }
 }
 ?>
