@@ -74,7 +74,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	public function getSourceDomainReturnsInitialValueForInteger() {
 
 		$this->assertSame(
-			0,
+			'',
 			$this->fixture->getSourceDomain()
 		);
 	}
@@ -123,10 +123,16 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	 */
 	public function setForceSslForBooleanSetsForceSsl() {
 		$this->fixture->setForceSsl(TRUE);
+		$this->fixture->setTarget('http://www.aoemedia.de/');
 
 		$this->assertSame(
 			TRUE,
 			$this->fixture->getForceSsl()
+		);
+
+		$this->assertEquals(
+			'https://www.aoemedia.de/',
+			$this->fixture->getTarget()
 		);
 	}
 
@@ -161,10 +167,40 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @test
 	 */
 	public function setTargetForStringSetsTarget() {
-		$this->fixture->setTarget('Conceived at T3CON10');
+		$this->fixture->setTarget('http://www.aoemedia.de');
 
 		$this->assertSame(
-			'Conceived at T3CON10',
+			'http://www.aoemedia.de',
+			$this->fixture->getTarget()
+		);
+	}
+
+	/**
+	 * @return array
+	 */
+	public function setTargetForStringAndParametersArraySetsTargetDataProvider() {
+		return array(
+			array('http://www.aoemedia.de', array(), 'http://www.aoemedia.de'),
+			array('http://www.aoemedia.de', array('test' => 'value'), 'http://www.aoemedia.de?test=value'), // sems that the last "/" is not required :)
+			array('http://www.aoemedia.de/', array('test' => 'value'), 'http://www.aoemedia.de/?test=value'),
+			array('http://www.aoemedia.de/home/', array(), 'http://www.aoemedia.de/home/'),
+			array('http://www.aoemedia.de/home/', array('test' => 'value'), 'http://www.aoemedia.de/home/?test=value'),
+			array('http://www.aoemedia.de/home/?test=value', array('my' => 'value'), 'http://www.aoemedia.de/home/?test=value&my=value'),
+			array('http://www.aoemedia.de/home/?test=value&hello=world', array('my' => 'value'), 'http://www.aoemedia.de/home/?test=value&hello=world&my=value'),
+		);
+	}
+
+	/**
+	 * @test
+	 * @dataProvider setTargetForStringAndParametersArraySetsTargetDataProvider
+	 */
+	public function setTargetForStringAndParametersArraySetsTarget($target, $parameters, $expectedTarget) {
+		$this->fixture->setKeepGet(TRUE);
+		$this->fixture->setTarget($target);
+		$this->fixture->setParameters($parameters);
+
+		$this->assertSame(
+			$expectedTarget,
 			$this->fixture->getTarget()
 		);
 	}

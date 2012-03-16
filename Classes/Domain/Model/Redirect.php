@@ -44,9 +44,9 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	/**
 	 * Select a domain to redirect.
 	 *
-	 * @var integer
+	 * @var string
 	 */
-	protected $sourceDomain = 0;
+	protected $sourceDomain = '';
 
 	/**
 	 * URL path
@@ -124,6 +124,11 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	 * @var boolean
 	 */
 	protected $disableCount = FALSE;
+
+	/**
+	 * @var array
+	 */
+	protected $parameters = array();
 
 	/**
 	 * Returns the title
@@ -244,6 +249,28 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	 * @return string $target
 	 */
 	public function getTarget() {
+		//TODO Add support for typoLink url generation based on given page id
+
+		if (strpos($this->target, 'http') !== 0) {
+			$this->target = t3lib_div::locationHeaderUrl($this->target);
+		}
+
+		if ($this->forceSsl === TRUE) {
+			$this->target = str_replace('http://','https://', $this->target);
+		}
+
+		if ($this->keepGet === TRUE) {
+			$parameterString = t3lib_div::implodeArrayForUrl('', $this->parameters);
+
+			if (strlen($parameterString) > 0) {
+				if(preg_match('/\?[^=]*?=[^&]*?/i', $this->target)) {
+					$this->target .= $parameterString;
+				} else {
+					$this->target .= '?'.substr($parameterString, 1);
+				}
+			}
+		}
+
 		return $this->target;
 	}
 
@@ -399,5 +426,29 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 		return $this->getDisableCount();
 	}
 
+	/**
+	 * Retrieve the "header" function related parameter.
+	 *
+	 * - Location:
+	 * - replace = TRUE
+	 * - http_response_code
+	 *
+	 * @return array
+	 */
+	public function getArguments() {
+		return array(
+			'Location: ' . $this->getTarget(),
+			true,
+			$this->getHeader()
+		);
+	}
+
+	/**
+	 * @param array $parameters
+	 * @return void
+	 */
+	public function setParameters(array $parameters) {
+		$this->parameters = $parameters;
+	}
 }
 ?>
