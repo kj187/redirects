@@ -37,7 +37,7 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persi
 	 * Fetch all redirect records based on given $domain and $path property.
 	 *
 	 * @param Tx_Redirects_Domain_Model_Request $request
-	 * @return array
+	 * @return Tx_Extbase_Persistence_QueryResult
 	 */
 	public function findAllByRequest(Tx_Redirects_Domain_Model_Request $request) {
 		$query = $this->createQuery();
@@ -46,15 +46,30 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persi
 		$domainName       = $request->getDomain();
 		$originalPath     = $request->getPath();
 		$alternativePath  = rtrim($originalPath, '/');
+		$countryCode      = $request->getCountryCode();
+		$accpetedLanguage = $request->getAcceptLanguage();
+
+//TODO add starttime, stoptime to SQL statement
 
 		return $query->statement('
-		SELECT *, IF(tx_redirects_domain_model_redirect.source_domain = "0",1,0) AS masked
-		FROM tx_redirects_domain_model_redirect
-		WHERE
-				(tx_redirects_domain_model_redirect.source_domain = "0" OR tx_redirects_domain_model_redirect.source_domain = (SELECT uid FROM sys_domain WHERE domainName = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($domainName) . ') )
-			AND
-				(tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($originalPath) . ' OR tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($alternativePath) . ' )
-			AND hidden = 0 AND deleted = 0 ORDER BY masked ASC,force_ssl DESC LIMIT 5')->execute();
+			SELECT *, IF(redirect.source_domain = "0",1,0) AS masked
+			FROM tx_redirects_domain_model_redirect AS redirect
+			WHERE
+					(redirect.source_domain = "0" OR redirect.source_domain = (SELECT uid FROM sys_domain WHERE domainName = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($domainName) . ') )
+				AND
+					(redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($originalPath) . ' OR redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($alternativePath) . ' )
+				AND
+					(redirect.country_code = "" OR redirect.country_code = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($countryCode) . ')
+				AND
+					(redirect.accept_language = "" OR redirect.accept_language = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($accpetedLanguage) . ')
+				AND
+					hidden = 0
+				AND
+					deleted = 0
+			ORDER BY
+				masked ASC,
+				force_ssl DESC
+			')->execute();
 	}
 
 	/**

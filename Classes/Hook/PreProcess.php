@@ -80,6 +80,6 @@ class Tx_Redirects_Hook_PreProcess {
 		$bootstrap       = t3lib_div::makeInstance('Tx_Extbase_Core_Bootstrap');
 		$bootstrap->cObj = $cObj;
 
-		$response = $bootstrap->run('', $config);
+		$bootstrap->run('', $config);
 	}
 }

@@ -33,26 +33,19 @@
 class Tx_Redirects_Controller_RedirectController extends Tx_Extbase_MVC_Controller_ActionController {
 
 	/**
-	 * redirectRepository
-	 *
-	 * @var Tx_Redirects_Domain_Repository_RedirectRepository
-	 */
-	protected $redirectRepository;
-
-	/**
 	 * @var Tx_Redirects_Domain_Model_Request
 	 */
 	protected $requestModel;
 
 	/**
-	 * injectRedirectRepository
-	 *
-	 * @param Tx_Redirects_Domain_Repository_RedirectRepository $redirectRepository
-	 * @return void
+	 * @var Tx_Redirects_Service_RedirectFactory
 	 */
-	public function injectRedirectRepository(Tx_Redirects_Domain_Repository_RedirectRepository $redirectRepository) {
-		$this->redirectRepository = $redirectRepository;
-	}
+	protected $redirectFactory;
+
+	/**
+	 * @var Tx_Redirects_Service_DeviceDetection
+	 */
+	protected $deviceDetection;
 
 	/**
 	 * injectRedirectRepository
@@ -65,19 +58,39 @@ class Tx_Redirects_Controller_RedirectController extends Tx_Extbase_MVC_Controll
 	}
 
 	/**
+	 * @param Tx_Redirects_Service_RedirectFactory $redirectFactory
+	 * @return void
+	 */
+	public function injectRedirectFactory(Tx_Redirects_Service_RedirectFactory $redirectFactory) {
+		$this->redirectFactory = $redirectFactory;
+	}
+
+	/**
+	 * @param Tx_Redirects_Service_DeviceDetection $deviceDetection
+	 * @return void
+	 */
+	public function injectDeviceDetection(Tx_Redirects_Service_DeviceDetection $deviceDetection) {
+		$this->deviceDetection = $deviceDetection;
+	}
+
+	/**
 	 * action redirect
 	 *
 	 * @return void
 	 */
 	public function indexAction() {
-		error_log(__METHOD__, 0);
-		$redirects = $this->redirectRepository->findAllByRequest($this->requestModel);
+		try {
+			$redirect = $this->redirectFactory->buildHttpRedirect($this->requestModel, $this->deviceDetection);
 
-		foreach ($redirects as $redirect) {
-			error_log('redirect-title: ' . $redirect->getTitle(), 0);
-			$this->redirectRepository->incrementCounter($redirect);
+			//call_user_func('header', $redirect->getArguments());
+			var_dump($redirect->getTarget() . ', ' . $redirect->getHeader());
+
+		} catch (Exception $e) {
+			error_log($e->getMessage(), 0);
+			var_dump($e->getMessage());
 		}
-		error_log('redirect-title: ' . count($redirects), 0); exit();
+
+		 exit();
 	}
 
 }
