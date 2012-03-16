@@ -133,24 +133,22 @@ class Tx_Redirects_Domain_Model_Request {
 
 		if (isset($acceptLanguage) && strlen($acceptLanguage) > 1) {
 			$matches = array();
-			$languageStruct = t3lib_div::trimExplode(',', $acceptLanguage);
+            $lang = array();
+			$languageStruct = t3lib_div::trimExplode(',', $acceptLanguage, TRUE);
 
 			foreach ($languageStruct as $value) {
-					// check for q-value and create associative array. No q-value means 1 by rule
+					// check for q-value and create associative array. No q-value means priority 10
 				if(preg_match("/(.*);q=([0-1]{0,1}\.\d{0,4})/i", $value, $matches)) {
-					$lang[$matches[1]] = (float)$matches[2];
+					$priority = (int)((float)$matches[2] * 10);
+					$lang[$priority] = $matches[1];
 				} else {
-					$lang[$value] = 1.0;
+					$lang[10] = $value;
 				}
 			}
+            ksort($lang);
 
-			$qval = 0.0;
-			foreach ($lang as $key => $value) {
-				if ($value > $qval) {
-					$qval = (float)$value;
-					$this->acceptLanguage = strtoupper($key);
-				}
-			}
+			$this->acceptLanguage = strtoupper(substr(array_pop($lang), 0, 2));
+
 		}
 	}
 

@@ -44,7 +44,7 @@ class Tx_Requests_Domain_Model_RequestTest extends Tx_Extbase_Tests_Unit_BaseTes
 	protected $fixture;
 
 	public function setUp() {
-		$this->fixture = new Tx_Redirects_Domain_Model_Request();
+		$this->fixture = $this->getMock('Tx_Redirects_Domain_Model_Request', array('dummy'), array(), '', false);
 	}
 
 	public function tearDown() {
@@ -121,11 +121,12 @@ class Tx_Requests_Domain_Model_RequestTest extends Tx_Extbase_Tests_Unit_BaseTes
 	public function setAcceptedLanguageStringForAcceptedLanguageDataProvider() {
 		return array(
 			array('de-DE,de;q=0.8,en-US;q=0.9,en;q=0.4', 'DE'), // google chrome
+			array('de-DE;q=0.2,,de;q=0.8,en-US;q=0.9,en;q=0.4', 'EN'), // google chrome
 			array('en-us,en;q=0.5', 'EN'), // Mozilla
 			array('en-US,en;q=0.9', 'EN'), // Opera
-			array('en-us', 'en'), // Internet Explorer
+			array('en-us', 'EN'), // Internet Explorer
 			array('en', 'EN'), // Lynx
-			array('da, en-gb;q=0.8, en;q=0.7', 'EN'),
+			array('da, en-gb;q=0.8, en;q=0.7', 'DA'),
 			array('en-US', 'EN'),
 		);
 	}
