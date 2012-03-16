@@ -74,5 +74,29 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
         $this->fixture->injectRedirectRepository($redirectRepository);
         $this->fixture->create($this->request, $this->deviceDetection);
     }
+
+    /**
+     * @test
+     * @return void
+     */
+    public function foundRedirect() {
+        $redirectFixture = new Tx_Redirects_Domain_Model_Redirect();
+        $redirectFixture->setTarget('http://www.aoemedia.de/');
+        $redirectFixture->setHeader(301);
+
+        $redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+        $redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture)));
+        $this->fixture->injectRedirectRepository($redirectRepository);
+        $redirect = $this->fixture->create($this->request, $this->deviceDetection);
+
+        $this->assertEquals(
+            $redirectFixture->getTarget(),
+            $redirect->getTarget()
+        );
+        $this->assertEquals(
+            $redirectFixture->getHeader(),
+            $redirect->getHeader()
+        );
+    }
 }
 ?>
