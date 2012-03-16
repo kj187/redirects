@@ -66,7 +66,6 @@ class Tx_Redirects_Domain_Model_Request {
 	 */
 	protected $path;
 
-
 	/**
 	 * Initialize Request arguments to
 	 */
