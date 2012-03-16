@@ -65,7 +65,7 @@ class Tx_Redirects_Service_RedirectFactory {
 	 * @param Tx_Redirects_Service_DeviceDetection $deviceDetection
 	 * @return Tx_Redirects_Domain_Model_Redirect
 	 */
-	public function buildHttpRedirect(Tx_Redirects_Domain_Model_Request $request, Tx_Redirects_Service_DeviceDetection $deviceDetection) {
+	public function create(Tx_Redirects_Domain_Model_Request $request, Tx_Redirects_Service_DeviceDetection $deviceDetection) {
 		$redirects = $this->redirectRepository->findAllByRequest($request);
 		$deviceDetection->setUserAgent($request->getUserAgent());
 
@@ -74,14 +74,14 @@ class Tx_Redirects_Service_RedirectFactory {
 			if ($redirect->getKeepGet() === TRUE) {
 				$redirect->addParameters($request->getParameters());
 			}
-
-			if ($redirect->getDisableCount() === FALSE) {
-				$this->redirectRepository->incrementCounter($redirect);
-			}
 		}
 
 		if (!$redirect instanceof Tx_Redirects_Domain_Model_Redirect) {
 			throw new Exception('No redirect available.');
+		}
+
+		if ($redirect->getDisableCount() === FALSE) {
+			$this->redirectRepository->incrementCounter($redirect);
 		}
 
 		return $redirect;

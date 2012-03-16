@@ -80,7 +80,7 @@ class Tx_Redirects_Controller_RedirectController extends Tx_Extbase_MVC_Controll
 	 */
 	public function indexAction() {
 		try {
-			$redirect = $this->redirectFactory->buildHttpRedirect($this->requestModel, $this->deviceDetection);
+			$redirect = $this->redirectFactory->create($this->requestModel, $this->deviceDetection);
 
 			//call_user_func('header', $redirect->getArguments());
 			var_dump($redirect->getTarget() . ', ' . $redirect->getHeader());
