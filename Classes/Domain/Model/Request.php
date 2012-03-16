@@ -66,11 +66,12 @@ class Tx_Redirects_Domain_Model_Request {
 	 */
 	protected $path;
 
+
 	/**
 	 * Initialize Request arguments to
 	 */
 	public function __construct() {
-		$this->setDomiain(t3lib_div::getIndpEnv('HTTP_HOST'));
+		$this->setDomain(t3lib_div::getIndpEnv('HTTP_HOST'));
 		$this->setPath(t3lib_div::getIndpEnv('REQUEST_URI'));
 		$this->setAcceptLanguage(t3lib_div::getIndpEnv('HTTP_ACCEPT_LANGUAGE'));
 		$this->setCountryCode(apache_note('GEOIP_COUNTRY_CODE'));
@@ -81,7 +82,7 @@ class Tx_Redirects_Domain_Model_Request {
 	/**
 	 * @param string $domain
 	 */
-	public function setDomiain($domain) {
+	public function setDomain($domain) {
 		$this->domain = $domain;
 	}
 
