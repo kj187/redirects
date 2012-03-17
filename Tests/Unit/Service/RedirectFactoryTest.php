@@ -98,5 +98,36 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
             $redirect->getHeader()
         );
     }
+
+    /**
+     * Priority has the redirect with configured device.
+     *
+     * @test
+     * @return void
+     */
+    public function foundRedirectByDevice() {
+        $redirectFixture = new Tx_Redirects_Domain_Model_Redirect();
+        $redirectFixture->setTarget('http://www.aoemedia.de/userAgent');
+        $redirectFixture->setHeader(301);
+        $redirectFixture->setUserAgent(2);
+
+        $redirectFixture2 = new Tx_Redirects_Domain_Model_Redirect();
+        $redirectFixture2->setTarget('http://www.aoemedia.de/');
+        $redirectFixture2->setHeader(302);
+
+        $redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+        $redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2)));
+        $this->fixture->injectRedirectRepository($redirectRepository);
+        $redirect = $this->fixture->create($this->request, $this->deviceDetection);
+
+        $this->assertEquals(
+            $redirectFixture->getTarget(),
+            $redirect->getTarget()
+        );
+        $this->assertEquals(
+            $redirectFixture->getHeader(),
+            $redirect->getHeader()
+        );
+    }
 }
 ?>
