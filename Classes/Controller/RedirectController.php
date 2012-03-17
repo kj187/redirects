@@ -81,17 +81,12 @@ class Tx_Redirects_Controller_RedirectController extends Tx_Extbase_MVC_Controll
 	public function indexAction() {
 		try {
 			$redirect = $this->redirectFactory->create($this->requestModel, $this->deviceDetection);
-
-			//call_user_func('header', $redirect->getArguments());
-			var_dump($redirect->getTarget() . ', ' . $redirect->getHeader());
-
+            var_dump("header('Location: " . $redirect->getTarget() . "', TRUE, " . $redirect->getHeader() . ");");
 		} catch (Exception $e) {
-			error_log($e->getMessage(), 0);
-			var_dump($e->getMessage());
+			error_log(__METHOD__ . ' - ' . $e->getMessage(), 0);
 		}
 
 		 exit();
 	}
-
 }
 ?>
