@@ -427,23 +427,6 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	}
 
 	/**
-	 * Retrieve the "header" function related parameter.
-	 *
-	 * - Location:
-	 * - replace = TRUE
-	 * - http_response_code
-	 *
-	 * @return array
-	 */
-	public function getArguments() {
-		return array(
-			'Location: ' . $this->getTarget(),
-			true,
-			$this->getHeader()
-		);
-	}
-
-	/**
 	 * @param array $parameters
 	 * @return void
 	 */
