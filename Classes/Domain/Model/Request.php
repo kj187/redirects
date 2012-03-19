@@ -127,13 +127,12 @@ class Tx_Redirects_Domain_Model_Request {
 
 	/**
 	 * @param string $acceptLanguage
-	 * @link http://www.dyeager.org/blog/2008/10/getting-browser-default-language-php.html
 	 */
 	public function setAcceptLanguage($acceptLanguage) {
 
 		if (isset($acceptLanguage) && strlen($acceptLanguage) > 1) {
 			$matches = array();
-            $lang = array();
+			$lang = array();
 			$languageStruct = t3lib_div::trimExplode(',', $acceptLanguage, TRUE);
 
 			foreach ($languageStruct as $value) {
@@ -145,10 +144,9 @@ class Tx_Redirects_Domain_Model_Request {
 					$lang[10] = $value;
 				}
 			}
-            ksort($lang);
+			ksort($lang);
 
 			$this->acceptLanguage = strtoupper(substr(array_pop($lang), 0, 2));
-
 		}
 	}
 
