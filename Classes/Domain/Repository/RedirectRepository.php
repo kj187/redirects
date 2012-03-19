@@ -53,18 +53,18 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persi
 		$deviceList       = implode(',', $devices);
 
 		return $query->statement('
-			SELECT *, IF(redirect.source_domain = "0",1,0) AS masked
-			FROM tx_redirects_domain_model_redirect AS redirect
+			SELECT *, IF(tx_redirects_domain_model_redirect.source_domain = "0",1,0) AS masked
+			FROM tx_redirects_domain_model_redirect
 			WHERE
-					(redirect.source_domain = "0" OR redirect.source_domain = (SELECT uid FROM sys_domain WHERE domainName = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($domainName) . ') )
+					(tx_redirects_domain_model_redirect.source_domain = "0" OR tx_redirects_domain_model_redirect.source_domain = (SELECT uid FROM sys_domain WHERE domainName = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($domainName) . ') )
 				AND
-					(redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($originalPath) . ' OR redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($alternativePath) . ' )
+					(tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($originalPath) . ' OR tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($alternativePath) . ' )
 				AND
-					(redirect.country_code = "" OR redirect.country_code = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($countryCode) . ')
+					(tx_redirects_domain_model_redirect.country_code = "" OR tx_redirects_domain_model_redirect.country_code = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($countryCode) . ')
 				AND
-					(redirect.accept_language = "" OR redirect.accept_language = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($accpetedLanguage) . ')
+					(tx_redirects_domain_model_redirect.accept_language = "" OR tx_redirects_domain_model_redirect.accept_language = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($accpetedLanguage) . ')
 				AND
-					redirect.device IN(' . $deviceList . ')
+					tx_redirects_domain_model_redirect.device IN(' . $deviceList . ')
 				' . $GLOBALS["TSFE"]->sys_page->enableFields("tx_redirects_domain_model_redirect") . '
 			ORDER BY
 				masked ASC,
