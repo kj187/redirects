@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_redirects_domain_model_redirect'] = array(
 	'ctrl' => $TCA['tx_redirects_domain_model_redirect']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'hidden, title, source_domain, source_path, force_ssl, keep_get, target, header, exclude_ips, country_code, accept_language, user_agent, count, disable_count',
+		'showRecordFieldList' => 'hidden, title, source_domain, source_path, force_ssl, keep_get, target, header, exclude_ips, country_code, accept_language, device, count, disable_count',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'title, source_domain;;2, target;;3, header,--div--;LLL:EXT:redirects/Resources/Private/Language/locallang_db.xlf:tabs.client, country_code, accept_language, user_agent,--div--;LLL:EXT:redirects/Resources/Private/Language/locallang_db.xlf:tabs.redirectCount,count, disable_count,--div--;LLL:EXT:redirects/Resources/Private/Language/locallang_db.xlf:tabs.excludeIP, exclude_ips,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,hidden;;1'),
+		'1' => array('showitem' => 'title, source_domain;;2, target;;3, header,--div--;LLL:EXT:redirects/Resources/Private/Language/locallang_db.xlf:tabs.client, country_code, accept_language, device,--div--;LLL:EXT:redirects/Resources/Private/Language/locallang_db.xlf:tabs.redirectCount,count, disable_count,--div--;LLL:EXT:redirects/Resources/Private/Language/locallang_db.xlf:tabs.excludeIP, exclude_ips,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,hidden;;1'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => 'starttime, endtime', 'canNotCollapse' => 1),
@@ -601,19 +601,19 @@ $TCA['tx_redirects_domain_model_redirect'] = array(
 				'maxitems' => 1,
 			),
 		),
-		'user_agent' => array(
+		'device' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent',
+			'label' => 'LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.device',
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
 					array('', 0),
-					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.android', 1),
-					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.apple', 2),
-					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.blackberry', 3),
-					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.desktop', 4),
-					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.smartPhone', 5),
-					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.tablet', 6),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.device.android', 1),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.device.apple', 2),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.device.blackberry', 3),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.device.desktop', 4),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.device.smartPhone', 5),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.device.tablet', 6),
 				),
 				'size' => 1,
 				'maxitems' => 1,

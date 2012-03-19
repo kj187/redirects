@@ -1327,25 +1327,25 @@
 			<trans-unit id="tx_redirects_domain_model_redirect.accept_language.WA">
 				<source>Walloon</source>
 			</trans-unit>
-			<trans-unit id="tx_redirects_domain_model_redirect.user_agent">
-				<source>User Agent</source>
+			<trans-unit id="tx_redirects_domain_model_redirect.device">
+				<source>Device</source>
 			</trans-unit>
-			<trans-unit id="tx_redirects_domain_model_redirect.user_agent.apple">
+			<trans-unit id="tx_redirects_domain_model_redirect.device.apple">
 				<source>Apple</source>
 			</trans-unit>
-			<trans-unit id="tx_redirects_domain_model_redirect.user_agent.android">
+			<trans-unit id="tx_redirects_domain_model_redirect.device.android">
 				<source>Android</source>
 			</trans-unit>
-			<trans-unit id="tx_redirects_domain_model_redirect.user_agent.blackberry">
+			<trans-unit id="tx_redirects_domain_model_redirect.device.blackberry">
 				<source>Blackberry</source>
 			</trans-unit>
-			<trans-unit id="tx_redirects_domain_model_redirect.user_agent.desktop">
+			<trans-unit id="tx_redirects_domain_model_redirect.device.desktop">
 				<source>Desktop</source>
 			</trans-unit>
-			<trans-unit id="tx_redirects_domain_model_redirect.user_agent.smartPhone">
+			<trans-unit id="tx_redirects_domain_model_redirect.device.smartPhone">
 				<source>Smart Phone</source>
 			</trans-unit>
-			<trans-unit id="tx_redirects_domain_model_redirect.user_agent.tablet">
+			<trans-unit id="tx_redirects_domain_model_redirect.device.tablet">
 				<source>Tablet</source>
 			</trans-unit>
 			<trans-unit id="tx_redirects_domain_model_redirect.count">

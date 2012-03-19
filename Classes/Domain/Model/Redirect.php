@@ -105,11 +105,11 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	protected $acceptLanguage = 0;
 
 	/**
-	 * If client is of lelected user agent type
+	 * If client is of lelected device type
 	 *
 	 * @var integer
 	 */
-	protected $userAgent = 0;
+	protected $device = 0;
 
 	/**
 	 * Redirect count
@@ -365,8 +365,8 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	 *
 	 * @return integer $userAgent
 	 */
-	public function getUserAgent() {
-		return $this->userAgent;
+	public function getDevice() {
+		return $this->device;
 	}
 
 	/**
@@ -375,8 +375,8 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	 * @param integer $userAgent
 	 * @return void
 	 */
-	public function setUserAgent($userAgent) {
-		$this->userAgent = $userAgent;
+	public function setDevice($userAgent) {
+		$this->device = $userAgent;
 	}
 
 	/**

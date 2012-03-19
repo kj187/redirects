@@ -34,8 +34,8 @@
 			<trans-unit id="accept_language.description">
 				<source>If a client accepts the selected language.</source>
 			</trans-unit>
-			<trans-unit id="user_agent.description">
-				<source>If client is of lelected user agent type</source>
+			<trans-unit id="device.description">
+				<source>If client is of selected device type</source>
 			</trans-unit>
 			<trans-unit id="count.description">
 				<source>Redirect count</source>

@@ -16,7 +16,7 @@ CREATE TABLE tx_redirects_domain_model_redirect (
 	exclude_ips varchar(255) DEFAULT '' NOT NULL,
 	country_code varchar(255) DEFAULT '' NOT NULL,
 	accept_language varchar(255) DEFAULT '' NOT NULL,
-	user_agent int(11) DEFAULT '0' NOT NULL,
+	device int(11) DEFAULT '0' NOT NULL,
 	count int(11) DEFAULT '0' NOT NULL,
 	disable_count tinyint(1) unsigned DEFAULT '0' NOT NULL,
 

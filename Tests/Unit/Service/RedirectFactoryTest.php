@@ -109,7 +109,7 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		$redirectFixture = new Tx_Redirects_Domain_Model_Redirect();
 		$redirectFixture->setTarget('http://www.aoemedia.de/userAgent');
 		$redirectFixture->setHeader(301);
-		$redirectFixture->setUserAgent(2);
+		$redirectFixture->setDevice(2);
 
 		$redirectFixture2 = new Tx_Redirects_Domain_Model_Redirect();
 		$redirectFixture2->setTarget('http://www.aoemedia.de/');

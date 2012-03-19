@@ -37,8 +37,8 @@
 			<trans-unit id="tx_redirects_domain_model_redirect.accept_language">
 				<source>If a client accepts the selected language.</source>
 			</trans-unit>
-			<trans-unit id="tx_redirects_domain_model_redirect.user_agent">
-				<source>If client is of lelected user agent type</source>
+			<trans-unit id="tx_redirects_domain_model_redirect.device">
+				<source>If client is of selected device type</source>
 			</trans-unit>
 			<trans-unit id="tx_redirects_domain_model_redirect.count">
 				<source>Redirect count</source>
@@ -46,7 +46,7 @@
 			<trans-unit id="tx_redirects_domain_model_redirect.disable_count">
 				<source>Disable redirect counter</source>
 			</trans-unit>
-			
+
 		</body>
 	</file>
 </xliff>

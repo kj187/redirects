@@ -311,7 +311,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	public function getUserAgentReturnsInitialValueForInteger() {
 		$this->assertSame(
 			0,
-			$this->fixture->getUserAgent()
+			$this->fixture->getDevice()
 		);
 	}
 
@@ -319,11 +319,11 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @test
 	 */
 	public function setUserAgentForIntegerSetsUserAgent() {
-		$this->fixture->setUserAgent(12);
+		$this->fixture->setDevice(12);
 
 		$this->assertSame(
 			12,
-			$this->fixture->getUserAgent()
+			$this->fixture->getDevice()
 		);
 	}
 
