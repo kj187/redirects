@@ -52,8 +52,6 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persi
 		$devices[]        = '0';
 		$deviceList       = implode(',', $devices);
 
-//TODO add starttime, stoptime to SQL statement
-
 		return $query->statement('
 			SELECT *, IF(redirect.source_domain = "0",1,0) AS masked
 			FROM tx_redirects_domain_model_redirect AS redirect
@@ -67,10 +65,7 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persi
 					(redirect.accept_language = "" OR redirect.accept_language = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($accpetedLanguage) . ')
 				AND
 					redirect.device IN(' . $deviceList . ')
-				AND
-					hidden = 0
-				AND
-					deleted = 0
+				' . $GLOBALS["TSFE"]->sys_page->enableFields("tx_redirects_domain_model_redirect") . '
 			ORDER BY
 				masked ASC,
 				force_ssl DESC
