@@ -90,13 +90,9 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		$this->fixture->injectRedirectRepository($redirectRepository);
 		$redirect = $this->fixture->create($this->request, $this->deviceDetection);
 
-		$this->assertEquals(
-			$redirectFixture->getTarget(),
-			$redirect->getTarget()
-		);
-		$this->assertEquals(
-			$redirectFixture->getHeader(),
-			$redirect->getHeader()
+		$this->assertSame(
+			$redirectFixture,
+			$redirect
 		);
 	}
 
@@ -123,13 +119,9 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		$this->fixture->injectRedirectRepository($redirectRepository);
 		$redirect = $this->fixture->create($this->request, $this->deviceDetection);
 
-		$this->assertEquals(
-			$redirectFixture->getTarget(),
-			$redirect->getTarget()
-		);
-		$this->assertEquals(
-			$redirectFixture->getHeader(),
-			$redirect->getHeader()
+		$this->assertSame(
+			$redirectFixture,
+			$redirect
 		);
 	}
 
@@ -182,6 +174,61 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 
 		$this->assertSame(
 			$redirectFixture2,
+			$redirect
+		);
+	}
+
+
+	/**
+	 * @test
+	 * @return void
+	 */
+	public function findRedirectOutOfManyRelatedRedirects() {
+		$redirectFixture = new Tx_Redirects_Domain_Model_Redirect();
+		$redirectFixture->setTitle('first');
+		$redirectFixture->setTarget('http://www.aoemedia.de/userAgent');
+		$redirectFixture->setHeader(301);
+		$redirectFixture->setExcludeIps('127.0.0.1,127.0.0.2');
+
+		$redirectFixture2 = new Tx_Redirects_Domain_Model_Redirect();
+		$redirectFixture2->setTitle('second');
+		$redirectFixture2->setTarget('http://www.aoemedia.de/userAgent');
+		$redirectFixture2->setHeader(301);
+		$redirectFixture2->setDevice(3);
+
+		$redirectFixture3 = new Tx_Redirects_Domain_Model_Redirect();
+		$redirectFixture3->setTitle('third');
+		$redirectFixture3->setTarget('http://www.aoemedia.de/userAgent');
+		$redirectFixture3->setHeader(303);
+		$redirectFixture3->setDevice(2);
+
+		$redirectFixture4 = new Tx_Redirects_Domain_Model_Redirect();
+		$redirectFixture4->setTitle('fourth');
+		$redirectFixture4->setTarget('http://www.aoemedia.de/userAgent');
+		$redirectFixture4->setHeader(303);
+		$redirectFixture4->setCountryCode('GB');
+		$redirectFixture4->setAcceptLanguage('EN');
+		$redirectFixture4->setDevice(2);
+
+		$redirectFixture5 = new Tx_Redirects_Domain_Model_Redirect();
+		$redirectFixture5->setTitle('fifth');
+		$redirectFixture5->setTarget('http://www.aoemedia.de/someOther');
+		$redirectFixture5->setHeader(301);
+		$redirectFixture5->setCountryCode('GB');
+		$redirectFixture5->setAcceptLanguage('EN');
+		$redirectFixture5->setDevice(2);
+
+		$request = $this->getMock('Tx_Redirects_Domain_Model_Request', array('getRemoteAddress', 'isApple', 'getAcceptLanguage', 'getCountryCode'), array(), '', FALSE);
+		$request->expects($this->any())->method('getRemoteAddress')->will($this->returnValue('127.0.0.3'));
+
+		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2, $redirectFixture3, $redirectFixture4, $redirectFixture5)));
+		$this->fixture->injectRedirectRepository($redirectRepository);
+
+		$redirect = $this->fixture->create($request, $this->deviceDetection);
+
+		$this->assertSame(
+			$redirectFixture4,
 			$redirect
 		);
 	}
