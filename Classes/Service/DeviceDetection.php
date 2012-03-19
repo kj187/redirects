@@ -34,6 +34,36 @@
 class Tx_Redirects_Service_DeviceDetection {
 
 	/**
+	 * @var integer
+	 */
+	const USER_AGENT_ANDROID = 1;
+
+	/**
+	 * @var integer
+	 */
+	const USER_AGENT_APPLE = 2;
+
+	/**
+	 * @var integer
+	 */
+	const USER_AGENT_BLACKBERRY = 3;
+
+	/**
+	 * @var integer
+	 */
+	const USER_AGENT_DESKTOP = 4;
+
+	/**
+	 * @var integer
+	 */
+	const USER_AGENT_SMARTPHONE = 5;
+
+	/**
+	 * @var integer
+	 */
+	const USER_AGENT_TABLET =  6;
+
+	/**
 	 * @var string
 	 */
 	protected $userAgent;
@@ -159,7 +189,7 @@ class Tx_Redirects_Service_DeviceDetection {
 	 *
 	 * @return boolean
 	 */
-	public function isTabled() {
+	public function isTablet() {
 		return $this->isTabled || $this->isPlayBook || $this->isIPad || $this->isAndroidTabled;
 	}
 
@@ -178,7 +208,7 @@ class Tx_Redirects_Service_DeviceDetection {
 	 * @return boolean
 	 */
 	public function isDesktop() {
-		return !$this->isTouch() && !$this->isTabled() && !$this->isSmartPhone();
+		return !$this->isTouch() && !$this->isTablet() && !$this->isSmartPhone();
 	}
 
 	/**
@@ -187,7 +217,7 @@ class Tx_Redirects_Service_DeviceDetection {
 	 * @return boolean
 	 */
 	public function isSmartPhone() {
-		return ($this->isMobile || $this->isBlackberry() || $this->isPalmDevice || $this->isUnknownMobileDevice) && !$this->isTabled() && !$this->isKindle();
+		return ($this->isMobile || $this->isBlackberry() || $this->isPalmDevice || $this->isUnknownMobileDevice) && !$this->isTablet() && !$this->isKindle();
 	}
 
 	/**
@@ -212,5 +242,35 @@ class Tx_Redirects_Service_DeviceDetection {
 		$this->isPalmDevice          = (FALSE !== strpos($this->userAgent, 'PalmOS') || FALSE !== strpos($this->userAgent, 'PalmSource') || FALSE !== strpos($this->userAgent, 'Pre/'));
 		$this->isKindle              =  FALSE !== strpos($this->userAgent, 'Kindle');
 		$this->isUnknownMobileDevice = (FALSE !== strpos($this->userAgent, 'Opera Mini') || FALSE !== strpos($this->userAgent, 'smartphone') || FALSE !== strpos($this->userAgent, 'SonyEricsson'));
+	}
+
+	/**
+	 * Find all device matches for current client given by request object.
+	 *
+	 * @return array
+	 */
+	public function getPossibleDevices() {
+		$matches = array();
+
+		if ($this->isAndroid()) {
+			$matches[] = self::USER_AGENT_ANDROID;
+		}
+		if ($this->isApple()) {
+			$matches[] = self::USER_AGENT_APPLE;
+		}
+		if ($this->isBlackberry()) {
+			$matches[] = self::USER_AGENT_BLACKBERRY;
+		}
+		if ($this->isDesktop()) {
+			$matches[] = self::USER_AGENT_DESKTOP;
+		}
+		if ($this->isSmartPhone()) {
+			$matches[] = self::USER_AGENT_SMARTPHONE;
+		}
+		if ($this->isTablet()) {
+			$matches[] = self::USER_AGENT_TABLET;
+		}
+
+		return $matches;
 	}
 }

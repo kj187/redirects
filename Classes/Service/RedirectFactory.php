@@ -62,13 +62,14 @@ class Tx_Redirects_Service_RedirectFactory {
 	 * @return Tx_Redirects_Domain_Model_Redirect
 	 */
 	public function create(Tx_Redirects_Domain_Model_Request $request, Tx_Redirects_Service_DeviceDetection $deviceDetection) {
-		$redirectMatch = null;
-		$redirects     = $this->redirectRepository->findAllByRequest($request);
 		$deviceDetection->setUserAgent($request->getUserAgent());
+		$redirectMatch = null; /** @var $redirectMatch Tx_Redirects_Domain_Model_Redirect */
+		$redirects     = $this->redirectRepository->findAllByRequest($request, $deviceDetection->getPossibleDevices());
 
 		foreach ($redirects as $redirect) { /** @var $redirect Tx_Redirects_Domain_Model_Redirect */
-
-			$redirectMatch = $redirect;
+			if (!$redirectMatch instanceof Tx_Redirects_Domain_Model_Redirect || $redirect->getPriority() > $redirectMatch->getPriority()) {
+				$redirectMatch = $redirect;
+			}
 		}
 
 		if (!$redirectMatch instanceof Tx_Redirects_Domain_Model_Redirect) {

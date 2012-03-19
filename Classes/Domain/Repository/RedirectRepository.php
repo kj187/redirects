@@ -37,9 +37,10 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persi
 	 * Fetch all redirect records based on given $domain and $path property.
 	 *
 	 * @param Tx_Redirects_Domain_Model_Request $request
+	 * @param array $devices
 	 * @return Tx_Extbase_Persistence_QueryResult
 	 */
-	public function findAllByRequest(Tx_Redirects_Domain_Model_Request $request) {
+	public function findAllByRequest(Tx_Redirects_Domain_Model_Request $request, array $devices) {
 		$query = $this->createQuery();
 		$query->getQuerySettings()->getRespectEnableFields(TRUE);
 		$query->getQuerySettings()->getRespectSysLanguage(FALSE);
@@ -48,6 +49,8 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persi
 		$alternativePath  = rtrim($originalPath, '/');
 		$countryCode      = $request->getCountryCode();
 		$accpetedLanguage = $request->getAcceptLanguage();
+		$devices[]        = '0';
+		$deviceList       = implode(',', $devices);
 
 //TODO add starttime, stoptime to SQL statement
 
@@ -62,6 +65,8 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persi
 					(redirect.country_code = "" OR redirect.country_code = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($countryCode) . ')
 				AND
 					(redirect.accept_language = "" OR redirect.accept_language = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($accpetedLanguage) . ')
+				AND
+					redirect.device IN(' . $deviceList . ')
 				AND
 					hidden = 0
 				AND

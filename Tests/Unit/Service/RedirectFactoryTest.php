@@ -55,8 +55,8 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 
 	public function setUp() {
 		$this->fixture = new Tx_Redirects_Service_RedirectFactory();
-		$this->request = $this->getMock('Tx_Redirects_Domain_Model_Request');
-		$this->deviceDetection = $this->getMock('Tx_Redirects_Service_DeviceDetection');
+		$this->request = $this->getMock('Tx_Redirects_Domain_Model_Request', array('isAndroid', 'isApple', 'isDesktop', 'isSmartPhone', 'isBlackberry', 'isTablet', 'isTouch'));
+		$this->deviceDetection = $this->getMock('Tx_Redirects_Service_DeviceDetection', array('dummy'));
 	}
 
 	public function tearDown() {
@@ -86,6 +86,7 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 
 		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
 		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture)));
+		$this->deviceDetection->expects($this->any())->method('getPossibleDevices')->will($this->returnValue(array(1,2,3,4,5,6)));
 		$this->fixture->injectRedirectRepository($redirectRepository);
 		$redirect = $this->fixture->create($this->request, $this->deviceDetection);
 
@@ -114,6 +115,8 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		$redirectFixture2 = new Tx_Redirects_Domain_Model_Redirect();
 		$redirectFixture2->setTarget('http://www.aoemedia.de/');
 		$redirectFixture2->setHeader(302);
+
+		$this->request->expects($this->any())->method('isApple')->will($this->returnValue(TRUE));
 
 		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
 		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2)));
