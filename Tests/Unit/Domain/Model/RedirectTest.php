@@ -266,7 +266,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	 */
 	public function getCountryCodeReturnsInitialValueForInteger() {
 		$this->assertSame(
-			0,
+			'',
 			$this->fixture->getCountryCode()
 		);
 	}
@@ -275,10 +275,10 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @test
 	 */
 	public function setCountryCodeForIntegerSetsCountryCode() {
-		$this->fixture->setCountryCode(12);
+		$this->fixture->setCountryCode('DE');
 
 		$this->assertSame(
-			12,
+			'DE',
 			$this->fixture->getCountryCode()
 		);
 	}
