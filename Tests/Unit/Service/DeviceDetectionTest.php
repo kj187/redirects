@@ -202,7 +202,7 @@ class Tx_Requests_Servic_DeviceDetectionTest extends Tx_Extbase_Tests_Unit_BaseT
 	public function tabletDeviceCouldBeDetected($userAgentString) {
 		$this->fixture->setUserAgent($userAgentString);
 
-		$this->assertTrue($this->fixture->isTabled(), 'isTablet');
+		$this->assertTrue($this->fixture->isTablet(), 'isTablet');
 	}
 
 	/**
