@@ -29,13 +29,13 @@
 				<source>HTTP header to send with the redirect.</source>
 			</trans-unit>
 			<trans-unit id="tx_redirects_domain_model_redirect.exclude_ips">
-				<source>List of excluded IP adresses</source>
+				<source>List of excluded IP adresses (comma seperated list)</source>
 			</trans-unit>
 			<trans-unit id="tx_redirects_domain_model_redirect.country_code">
 				<source>If a client comes from the selected country (requires maxmind apache module)</source>
 			</trans-unit>
 			<trans-unit id="tx_redirects_domain_model_redirect.accept_language">
-				<source>If a client accepts the selected language.</source>
+				<source>If a client accepts the selected language (Browser settings "prefered language").</source>
 			</trans-unit>
 			<trans-unit id="tx_redirects_domain_model_redirect.device">
 				<source>If client is of selected device type</source>
