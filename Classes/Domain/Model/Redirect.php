@@ -3,7 +3,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2012 Michael Klapper <development@morphodo.com>
+ *  (c) 2012 Michael Klapper <michael.klapper@aoemedia.de>
  *
  *  All rights reserved
  *

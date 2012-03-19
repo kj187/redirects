@@ -2,7 +2,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2012 Michael Klapper <development@morphodo.com>
+ *  (c) 2012 Michael Klapper <michael.klapper@aoemedia.de>
  *
  *  All rights reserved
  *
@@ -26,7 +26,7 @@
 /**
  * Custom configuration manager for special usage in early requests.
  *
- * @author: Michael Klapper <development@morphodo.com>
+ * @author: Michael Klapper <michael.klapper@aoemedia.de>
  * @date: 14.03.12
  * @time: 15:45
  */

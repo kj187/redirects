@@ -3,7 +3,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2012 Michael Klapper <development@morphodo.com>
+ *  (c) 2012 Michael Klapper <michael.klapper@aoemedia.de>
  *
  *  All rights reserved
  *
@@ -34,7 +34,7 @@
  * @package TYPO3
  * @subpackage Redirect Management
  *
- * @author Michael Klapper <development@morphodo.com>
+ * @author Michael Klapper <michael.klapper@aoemedia.de>
  */
 class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
 

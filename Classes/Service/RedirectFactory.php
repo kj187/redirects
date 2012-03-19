@@ -3,7 +3,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2012 Michael Klapper <development@morphodo.com>
+ *  (c) 2012 Michael Klapper <michael.klapper@aoemedia.de>
  *
  *  All rights reserved
  *
@@ -27,7 +27,7 @@
 /**
  * RedirectFactory Class
  *
- * @author: Michael Klapper <development@morphodo.com>
+ * @author: Michael Klapper <michael.klapper@aoemedia.de>
  * @date: 15.03.12
  * @time: 11:21
  */

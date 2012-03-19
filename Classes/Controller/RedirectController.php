@@ -3,7 +3,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2012 Michael Klapper <development@morphodo.com>
+ *  (c) 2012 Michael Klapper <michael.klapper@aoemedia.de>
  *
  *  All rights reserved
  *
@@ -26,7 +26,7 @@
 
 /**
  *
- * @author Michael Klapper <development@morphodo.com>
+ * @author Michael Klapper <michael.klapper@aoemedia.de>
  * @package redirects
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
