@@ -55,7 +55,7 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 
 	public function setUp() {
 		$this->fixture = new Tx_Redirects_Service_RedirectFactory();
-		$this->request = $this->getMock('Tx_Redirects_Domain_Model_Request', array('isAndroid', 'isApple', 'isDesktop', 'isSmartPhone', 'isBlackberry', 'isTablet', 'isTouch'));
+		$this->request = $this->getMock('Tx_Redirects_Domain_Model_Request', array('dummy'), array(), '', FALSE);
 		$this->deviceDetection = $this->getMock('Tx_Redirects_Service_DeviceDetection', array('dummy'));
 	}
 
@@ -130,6 +130,59 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		$this->assertEquals(
 			$redirectFixture->getHeader(),
 			$redirect->getHeader()
+		);
+	}
+
+	/**
+	 * @test
+	 * @return void
+	 * @expectedException Exception
+	 */
+	public function excludeRedirectByRemoteAddressThrowsException() {
+		$redirectFixture = new Tx_Redirects_Domain_Model_Redirect();
+		$redirectFixture->setTarget('http://www.aoemedia.de/userAgent');
+		$redirectFixture->setHeader(301);
+		$redirectFixture->setDevice(2);
+		$redirectFixture->setExcludeIps('127.0.0.1,127.0.0.2');
+
+		$request = $this->getMock('Tx_Redirects_Domain_Model_Request', array('getRemoteAddress'), array(), '', FALSE);
+		$request->expects($this->any())->method('getRemoteAddress')->will($this->returnValue('127.0.0.2'));
+
+		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture)));
+		$this->fixture->injectRedirectRepository($redirectRepository);
+
+		$redirect = $this->fixture->create($request, $this->deviceDetection);
+	}
+
+	/**
+	 * @test
+	 * @return void
+	 */
+	public function excludeRedirectByRemoteAddress() {
+		$redirectFixture = new Tx_Redirects_Domain_Model_Redirect();
+		$redirectFixture->setTarget('http://www.aoemedia.de/userAgent');
+		$redirectFixture->setHeader(301);
+		$redirectFixture->setDevice(2);
+		$redirectFixture->setExcludeIps('127.0.0.1,127.0.0.2');
+
+		$redirectFixture2 = new Tx_Redirects_Domain_Model_Redirect();
+		$redirectFixture2->setTarget('http://www.aoemedia.de/userAgent');
+		$redirectFixture2->setHeader(301);
+		$redirectFixture2->setDevice(3);
+
+		$request = $this->getMock('Tx_Redirects_Domain_Model_Request', array('getRemoteAddress'), array(), '', FALSE);
+		$request->expects($this->any())->method('getRemoteAddress')->will($this->returnValue('127.0.0.2'));
+
+		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2)));
+		$this->fixture->injectRedirectRepository($redirectRepository);
+
+		$redirect = $this->fixture->create($request, $this->deviceDetection);
+
+		$this->assertSame(
+			$redirectFixture2,
+			$redirect
 		);
 	}
 }

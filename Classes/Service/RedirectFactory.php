@@ -67,6 +67,12 @@ class Tx_Redirects_Service_RedirectFactory {
 		$redirects     = $this->redirectRepository->findAllByRequest($request, $deviceDetection->getPossibleDevices());
 
 		foreach ($redirects as $redirect) { /** @var $redirect Tx_Redirects_Domain_Model_Redirect */
+
+				// check for matching exclude IP
+			if (in_array($request->getRemoteAddress(), $redirect->getExcludeIps())) {
+				continue;
+			}
+
 			if (!$redirectMatch instanceof Tx_Redirects_Domain_Model_Redirect || $redirect->getPriority() > $redirectMatch->getPriority()) {
 				$redirectMatch = $redirect;
 			}
