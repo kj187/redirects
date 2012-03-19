@@ -38,12 +38,12 @@
  */
 class Tx_Redirects_Controller_RedirectControllerTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
 	/**
-	 * @var Tx_Redirects_Domain_Model_Redirect
+	 * @var Tx_Redirects_Controller_RedirectController
 	 */
-	protected $fixture;
+	protected $redirectController;
 
 	public function setUp() {
-		$this->fixture = new Tx_Redirects_Domain_Model_Redirect();
+		$this->redirectController = new Tx_Redirects_Controller_RedirectController();
 	}
 
 	public function tearDown() {
@@ -53,9 +53,27 @@ class Tx_Redirects_Controller_RedirectControllerTest extends Tx_Extbase_Tests_Un
 	/**
 	 * @test
 	 */
-	public function dummyMethod() {
-		$this->markTestIncomplete();
-	}
+	public function indexActionCallsRedirectFactory() {
+        $this->markTestIncomplete();
+        $redirectFixture = new Tx_Redirects_Domain_Model_Redirect();
+        $redirectFixture->setTitle('first');
+        $redirectFixture->setTarget('http://www.aoemedia.de/userAgent');
+        $redirectFixture->setHeader(301);
+
+        $redirectFactory = $this->getMock('Tx_Redirects_Service_RedirectFactory', array('create'));
+        $redirectFactory->expects($this->once())->method('create')->will($this->returnValue($redirectFixture));
+
+        $request = $this->getMock('Tx_Redirects_Domain_Model_Request');
+        $deviceDetection = $this->getMock('Tx_Redirects_Service_DeviceDetection');
+
+        $this->redirectController->injectRedirectFactory($redirectFactory);
+        $this->redirectController->injectRequest($request);
+        $this->redirectController->injectDeviceDetection($deviceDetection);
+        $this->redirectController->indexAction();
+        $headerList = xdebug_get_headers();
+        $this->assertContains('Location: http://www.aoemedia.de/userAgent', $headerList);
+
+    }
 
 }
 ?>
