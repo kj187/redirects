@@ -446,11 +446,11 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 			$priority += 4;
 		}
 
-		if ($this->acceptLanguage > 0) {
+		if ($this->acceptLanguage != '') {
 			$priority += 3;
 		}
 
-		if ($this->countryCode > 0) {
+		if ($this->countryCode != '') {
 			$priority += 5;
 		}
 
