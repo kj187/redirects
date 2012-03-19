@@ -25,7 +25,8 @@
  ***************************************************************/
 
 tslib_eidtools::connectDB();
-tslib_eidtools::initExtensionTca('redirects');
+require_once t3lib_extMgm::extPath('redirects') . 'ext_tables.php';
+$GLOBALS['TCA'] = $TCA;
 
 /**
  * Hook to process possible redirects.
