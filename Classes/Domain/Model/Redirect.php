@@ -93,9 +93,9 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	/**
 	 * If a client comes from the selected country (requires maxmind apache module)
 	 *
-	 * @var integer
+	 * @var string
 	 */
-	protected $countryCode = 0;
+	protected $countryCode = '';
 
 	/**
 	 * If a client accepts the selected language.
@@ -325,7 +325,7 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	/**
 	 * Returns the countryCode
 	 *
-	 * @return integer $countryCode
+	 * @return string $countryCode
 	 */
 	public function getCountryCode() {
 		return $this->countryCode;
@@ -334,7 +334,7 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	/**
 	 * Sets the countryCode
 	 *
-	 * @param integer $countryCode
+	 * @param string $countryCode
 	 * @return void
 	 */
 	public function setCountryCode($countryCode) {
@@ -432,6 +432,29 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	 */
 	public function setParameters(array $parameters) {
 		$this->parameters = $parameters;
+	}
+
+	/**
+	 * Retrun the prirority value for the current redirect object.
+	 *
+	 * @return integer
+	 */
+	public function getPriority() {
+		$priority = 0;
+
+		if ($this->device > 0) {
+			$priority += 4;
+		}
+
+		if ($this->acceptLanguage > 0) {
+			$priority += 3;
+		}
+
+		if ($this->countryCode > 0) {
+			$priority += 5;
+		}
+
+		return $priority;
 	}
 }
 ?>
