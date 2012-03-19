@@ -608,8 +608,8 @@ $TCA['tx_redirects_domain_model_redirect'] = array(
 				'type' => 'select',
 				'items' => array(
 					array('', 0),
-					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.apple', 1),
-					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.android', 2),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.android', 1),
+					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.apple', 2),
 					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.blackberry', 3),
 					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.desktop', 4),
 					array('LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.user_agent.smartPhone', 5),
