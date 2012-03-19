@@ -25,7 +25,7 @@
  ***************************************************************/
 
 /**
- * DeviceDetection Class
+ * RedirectFactory Class
  *
  * @author: Michael Klapper <development@morphodo.com>
  * @date: 15.03.12
@@ -55,29 +55,29 @@ class Tx_Redirects_Service_RedirectFactory {
 	 */
 	protected $request;
 
-    /**
-     * @param Tx_Redirects_Domain_Model_Request $request
-     * @param Tx_Redirects_Service_DeviceDetection $deviceDetection
-     * @throws Exception
-     * @return Tx_Redirects_Domain_Model_Redirect
-     */
+	/**
+	 * @param Tx_Redirects_Domain_Model_Request $request
+	 * @param Tx_Redirects_Service_DeviceDetection $deviceDetection
+	 * @throws Exception
+	 * @return Tx_Redirects_Domain_Model_Redirect
+	 */
 	public function create(Tx_Redirects_Domain_Model_Request $request, Tx_Redirects_Service_DeviceDetection $deviceDetection) {
-        $redirectMatch = null;
-        $redirects     = $this->redirectRepository->findAllByRequest($request);
-        $deviceDetection->setUserAgent($request->getUserAgent());
+		$redirectMatch = null;
+		$redirects     = $this->redirectRepository->findAllByRequest($request);
+		$deviceDetection->setUserAgent($request->getUserAgent());
 
 		foreach ($redirects as $redirect) { /** @var $redirect Tx_Redirects_Domain_Model_Redirect */
 
-            $redirectMatch = $redirect;
+			$redirectMatch = $redirect;
 		}
 
 		if (!$redirectMatch instanceof Tx_Redirects_Domain_Model_Redirect) {
 			throw new Exception('No redirect available.');
 		}
 
-        if ($redirectMatch->getKeepGet() === TRUE) {
-            $redirectMatch->addParameters($request->getParameters());
-        }
+		if ($redirectMatch->getKeepGet() === TRUE) {
+			$redirectMatch->addParameters($request->getParameters());
+		}
 
 		if ($redirectMatch->getDisableCount() === FALSE) {
 			$this->redirectRepository->incrementCounter($redirectMatch);

@@ -193,6 +193,9 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @test
 	 * @dataProvider setTargetForStringAndParametersArraySetsTargetDataProvider
+	 * @param $target
+	 * @param $parameters
+	 * @param $expectedTarget
 	 */
 	public function setTargetForStringAndParametersArraySetsTarget($target, $parameters, $expectedTarget) {
 		$this->fixture->setKeepGet(TRUE);

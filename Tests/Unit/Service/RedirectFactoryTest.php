@@ -54,7 +54,7 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 	protected $deviceDetection;
 
 	public function setUp() {
-        $this->fixture = new Tx_Redirects_Service_RedirectFactory();
+		$this->fixture = new Tx_Redirects_Service_RedirectFactory();
 		$this->request = $this->getMock('Tx_Redirects_Domain_Model_Request');
 		$this->deviceDetection = $this->getMock('Tx_Redirects_Service_DeviceDetection');
 	}
@@ -63,71 +63,71 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		unset($this->fixture);
 	}
 
-    /**
-     * @test
-     * @expectedException Exception
-     * @return void
-     */
-    public function throwsException() {
-        $redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
-        $redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array()));
-        $this->fixture->injectRedirectRepository($redirectRepository);
-        $this->fixture->create($this->request, $this->deviceDetection);
-    }
+	/**
+	 * @test
+	 * @expectedException Exception
+	 * @return void
+	 */
+	public function throwsException() {
+		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array()));
+		$this->fixture->injectRedirectRepository($redirectRepository);
+		$this->fixture->create($this->request, $this->deviceDetection);
+	}
 
-    /**
-     * @test
-     * @return void
-     */
-    public function foundRedirect() {
-        $redirectFixture = new Tx_Redirects_Domain_Model_Redirect();
-        $redirectFixture->setTarget('http://www.aoemedia.de/');
-        $redirectFixture->setHeader(301);
+	/**
+	 * @test
+	 * @return void
+	 */
+	public function foundRedirect() {
+		$redirectFixture = new Tx_Redirects_Domain_Model_Redirect();
+		$redirectFixture->setTarget('http://www.aoemedia.de/');
+		$redirectFixture->setHeader(301);
 
-        $redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
-        $redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture)));
-        $this->fixture->injectRedirectRepository($redirectRepository);
-        $redirect = $this->fixture->create($this->request, $this->deviceDetection);
+		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture)));
+		$this->fixture->injectRedirectRepository($redirectRepository);
+		$redirect = $this->fixture->create($this->request, $this->deviceDetection);
 
-        $this->assertEquals(
-            $redirectFixture->getTarget(),
-            $redirect->getTarget()
-        );
-        $this->assertEquals(
-            $redirectFixture->getHeader(),
-            $redirect->getHeader()
-        );
-    }
+		$this->assertEquals(
+			$redirectFixture->getTarget(),
+			$redirect->getTarget()
+		);
+		$this->assertEquals(
+			$redirectFixture->getHeader(),
+			$redirect->getHeader()
+		);
+	}
 
-    /**
-     * Priority has the redirect with configured device.
-     *
-     * @test
-     * @return void
-     */
-    public function foundRedirectByDevice() {
-        $redirectFixture = new Tx_Redirects_Domain_Model_Redirect();
-        $redirectFixture->setTarget('http://www.aoemedia.de/userAgent');
-        $redirectFixture->setHeader(301);
-        $redirectFixture->setUserAgent(2);
+	/**
+	 * Priority has the redirect with configured device.
+	 *
+	 * @test
+	 * @return void
+	 */
+	public function foundRedirectByDevice() {
+		$redirectFixture = new Tx_Redirects_Domain_Model_Redirect();
+		$redirectFixture->setTarget('http://www.aoemedia.de/userAgent');
+		$redirectFixture->setHeader(301);
+		$redirectFixture->setUserAgent(2);
 
-        $redirectFixture2 = new Tx_Redirects_Domain_Model_Redirect();
-        $redirectFixture2->setTarget('http://www.aoemedia.de/');
-        $redirectFixture2->setHeader(302);
+		$redirectFixture2 = new Tx_Redirects_Domain_Model_Redirect();
+		$redirectFixture2->setTarget('http://www.aoemedia.de/');
+		$redirectFixture2->setHeader(302);
 
-        $redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
-        $redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2)));
-        $this->fixture->injectRedirectRepository($redirectRepository);
-        $redirect = $this->fixture->create($this->request, $this->deviceDetection);
+		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2)));
+		$this->fixture->injectRedirectRepository($redirectRepository);
+		$redirect = $this->fixture->create($this->request, $this->deviceDetection);
 
-        $this->assertEquals(
-            $redirectFixture->getTarget(),
-            $redirect->getTarget()
-        );
-        $this->assertEquals(
-            $redirectFixture->getHeader(),
-            $redirect->getHeader()
-        );
-    }
+		$this->assertEquals(
+			$redirectFixture->getTarget(),
+			$redirect->getTarget()
+		);
+		$this->assertEquals(
+			$redirectFixture->getHeader(),
+			$redirect->getHeader()
+		);
+	}
 }
 ?>
