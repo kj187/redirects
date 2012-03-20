@@ -41,7 +41,7 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @var Tx_Redirects_Service_RedirectFactory
 	 */
-	protected $redirectRepository;
+	protected $redirectFactory;
 
 	/**
 	 * @var Tx_Redirects_Domain_Model_Request
@@ -53,14 +53,20 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 	 */
 	protected $deviceDetection;
 
+	/**
+	 * @var Tx_Phpunit_Framework
+	 */
+	protected $testingFramework;
+
 	public function setUp() {
-		$this->redirectRepository = new Tx_Redirects_Service_RedirectFactory();
+		$this->redirectFactory = new Tx_Redirects_Service_RedirectFactory();
 		$this->request = $this->getMock('Tx_Redirects_Domain_Model_Request', array('dummy'), array(), '', FALSE);
 		$this->deviceDetection = $this->getMock('Tx_Redirects_Service_DeviceDetection', array('dummy'));
+		$this->testingFramework = new Tx_Phpunit_Framework('tx_redirects');
 	}
 
 	public function tearDown() {
-		unset($this->redirectRepository);
+		unset($this->redirectFactory, $this->testingFramework);
 	}
 
 	/**
@@ -69,10 +75,10 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 	 * @return void
 	 */
 	public function throwsException() {
-		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
-		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array()));
-		$this->redirectRepository->injectRedirectRepository($redirectRepository);
-		$this->redirectRepository->create($this->request, $this->deviceDetection);
+		$redirectFactory = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+		$redirectFactory->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array()));
+		$this->redirectFactory->injectRedirectRepository($redirectFactory);
+		$this->redirectFactory->create($this->request, $this->deviceDetection);
 	}
 
 	/**
@@ -84,11 +90,11 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		$redirectFixture->setTarget('http://www.aoemedia.de/');
 		$redirectFixture->setHeader(301);
 
-		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
-		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture)));
+		$redirectFactory = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+		$redirectFactory->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture)));
 		$this->deviceDetection->expects($this->any())->method('getPossibleDevices')->will($this->returnValue(array(1,2,3,4,5,6)));
-		$this->redirectRepository->injectRedirectRepository($redirectRepository);
-		$redirect = $this->redirectRepository->create($this->request, $this->deviceDetection);
+		$this->redirectFactory->injectRedirectRepository($redirectFactory);
+		$redirect = $this->redirectFactory->create($this->request, $this->deviceDetection);
 
 		$this->assertSame(
 			$redirectFixture,
@@ -114,10 +120,10 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 
 		$this->request->expects($this->any())->method('isApple')->will($this->returnValue(TRUE));
 
-		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
-		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2)));
-		$this->redirectRepository->injectRedirectRepository($redirectRepository);
-		$redirect = $this->redirectRepository->create($this->request, $this->deviceDetection);
+		$redirectFactory = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+		$redirectFactory->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2)));
+		$this->redirectFactory->injectRedirectRepository($redirectFactory);
+		$redirect = $this->redirectFactory->create($this->request, $this->deviceDetection);
 
 		$this->assertSame(
 			$redirectFixture,
@@ -140,11 +146,11 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		$request = $this->getMock('Tx_Redirects_Domain_Model_Request', array('getRemoteAddress'), array(), '', FALSE);
 		$request->expects($this->any())->method('getRemoteAddress')->will($this->returnValue('127.0.0.2'));
 
-		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
-		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture)));
-		$this->redirectRepository->injectRedirectRepository($redirectRepository);
+		$redirectFactory = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+		$redirectFactory->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture)));
+		$this->redirectFactory->injectRedirectRepository($redirectFactory);
 
-		$redirect = $this->redirectRepository->create($request, $this->deviceDetection);
+		$redirect = $this->redirectFactory->create($request, $this->deviceDetection);
 	}
 
 	/**
@@ -166,11 +172,11 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		$request = $this->getMock('Tx_Redirects_Domain_Model_Request', array('getRemoteAddress'), array(), '', FALSE);
 		$request->expects($this->any())->method('getRemoteAddress')->will($this->returnValue('127.0.0.2'));
 
-		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
-		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2)));
-		$this->redirectRepository->injectRedirectRepository($redirectRepository);
+		$redirectFactory = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+		$redirectFactory->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2)));
+		$this->redirectFactory->injectRedirectRepository($redirectFactory);
 
-		$redirect = $this->redirectRepository->create($request, $this->deviceDetection);
+		$redirect = $this->redirectFactory->create($request, $this->deviceDetection);
 
 		$this->assertSame(
 			$redirectFixture2,
@@ -221,11 +227,11 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		$request = $this->getMock('Tx_Redirects_Domain_Model_Request', array('getRemoteAddress', 'isApple', 'getAcceptLanguage', 'getCountryCode'), array(), '', FALSE);
 		$request->expects($this->any())->method('getRemoteAddress')->will($this->returnValue('127.0.0.3'));
 
-		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
-		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2, $redirectFixture3, $redirectFixture4, $redirectFixture5)));
-		$this->redirectRepository->injectRedirectRepository($redirectRepository);
+		$redirectFactory = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
+		$redirectFactory->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2, $redirectFixture3, $redirectFixture4, $redirectFixture5)));
+		$this->redirectFactory->injectRedirectRepository($redirectFactory);
 
-		$redirect = $this->redirectRepository->create($request, $this->deviceDetection);
+		$redirect = $this->redirectFactory->create($request, $this->deviceDetection);
 
 		$this->assertSame(
 			$redirectFixture4,
