@@ -8,5 +8,4 @@ Additional Improvements
 - Implement IP wildcard support on whitelist and blacklist
 - Performance tuning
     - Avoid using extbase.
-- Reports module to check for function "apache_getenv()".
 - Module to find conflicting redirect records.

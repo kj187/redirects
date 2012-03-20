@@ -27,4 +27,6 @@ $TCA['tx_redirects_domain_model_redirect'] = array(
 	),
 );
 
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['redirects'][] = 'tx_redirects_utility_redirectsrequirementscheck';
+
 ?>
