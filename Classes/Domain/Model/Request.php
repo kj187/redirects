@@ -85,7 +85,7 @@ class Tx_Redirects_Domain_Model_Request {
 		$this->setDomain(t3lib_div::getIndpEnv('HTTP_HOST'));
 		$this->setPath(t3lib_div::getIndpEnv('REQUEST_URI'));
 		$this->setAcceptLanguage(t3lib_div::getIndpEnv('HTTP_ACCEPT_LANGUAGE'));
-		$this->setCountryCode(apache_note('GEOIP_COUNTRY_CODE'));
+		$this->setCountryCode(apache_getenv('GEOIP_COUNTRY_CODE'));
 		$this->setRemoteAddress(t3lib_div::getIndpEnv('REMOTE_ADDR'));
 		$this->setUserAgent(t3lib_div::getIndpEnv('HTTP_USER_AGENT'));
 		$this->setParmeters(t3lib_div::_GET());
