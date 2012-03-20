@@ -40,6 +40,9 @@ CREATE TABLE tx_redirects_domain_model_redirect (
 
 	t3_origuid int(11) DEFAULT '0' NOT NULL,
 
+	# phpunit testing flag
+	is_dummy_record tinyint(1) unsigned DEFAULT '0' NOT NULL,
+
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
