@@ -41,7 +41,7 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @var Tx_Redirects_Service_RedirectFactory
 	 */
-	protected $fixture;
+	protected $redirectRepository;
 
 	/**
 	 * @var Tx_Redirects_Domain_Model_Request
@@ -54,13 +54,13 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 	protected $deviceDetection;
 
 	public function setUp() {
-		$this->fixture = new Tx_Redirects_Service_RedirectFactory();
+		$this->redirectRepository = new Tx_Redirects_Service_RedirectFactory();
 		$this->request = $this->getMock('Tx_Redirects_Domain_Model_Request', array('dummy'), array(), '', FALSE);
 		$this->deviceDetection = $this->getMock('Tx_Redirects_Service_DeviceDetection', array('dummy'));
 	}
 
 	public function tearDown() {
-		unset($this->fixture);
+		unset($this->redirectRepository);
 	}
 
 	/**
@@ -71,8 +71,8 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 	public function throwsException() {
 		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
 		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array()));
-		$this->fixture->injectRedirectRepository($redirectRepository);
-		$this->fixture->create($this->request, $this->deviceDetection);
+		$this->redirectRepository->injectRedirectRepository($redirectRepository);
+		$this->redirectRepository->create($this->request, $this->deviceDetection);
 	}
 
 	/**
@@ -87,8 +87,8 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
 		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture)));
 		$this->deviceDetection->expects($this->any())->method('getPossibleDevices')->will($this->returnValue(array(1,2,3,4,5,6)));
-		$this->fixture->injectRedirectRepository($redirectRepository);
-		$redirect = $this->fixture->create($this->request, $this->deviceDetection);
+		$this->redirectRepository->injectRedirectRepository($redirectRepository);
+		$redirect = $this->redirectRepository->create($this->request, $this->deviceDetection);
 
 		$this->assertSame(
 			$redirectFixture,
@@ -116,8 +116,8 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 
 		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
 		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2)));
-		$this->fixture->injectRedirectRepository($redirectRepository);
-		$redirect = $this->fixture->create($this->request, $this->deviceDetection);
+		$this->redirectRepository->injectRedirectRepository($redirectRepository);
+		$redirect = $this->redirectRepository->create($this->request, $this->deviceDetection);
 
 		$this->assertSame(
 			$redirectFixture,
@@ -142,9 +142,9 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 
 		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
 		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture)));
-		$this->fixture->injectRedirectRepository($redirectRepository);
+		$this->redirectRepository->injectRedirectRepository($redirectRepository);
 
-		$redirect = $this->fixture->create($request, $this->deviceDetection);
+		$redirect = $this->redirectRepository->create($request, $this->deviceDetection);
 	}
 
 	/**
@@ -168,9 +168,9 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 
 		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
 		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2)));
-		$this->fixture->injectRedirectRepository($redirectRepository);
+		$this->redirectRepository->injectRedirectRepository($redirectRepository);
 
-		$redirect = $this->fixture->create($request, $this->deviceDetection);
+		$redirect = $this->redirectRepository->create($request, $this->deviceDetection);
 
 		$this->assertSame(
 			$redirectFixture2,
@@ -223,9 +223,9 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 
 		$redirectRepository = $this->getMock('Tx_Redirects_Domain_Repository_RedirectRepository');
 		$redirectRepository->expects($this->any())->method('findAllByRequest')->will($this->returnValue(array($redirectFixture, $redirectFixture2, $redirectFixture3, $redirectFixture4, $redirectFixture5)));
-		$this->fixture->injectRedirectRepository($redirectRepository);
+		$this->redirectRepository->injectRedirectRepository($redirectRepository);
 
-		$redirect = $this->fixture->create($request, $this->deviceDetection);
+		$redirect = $this->redirectRepository->create($request, $this->deviceDetection);
 
 		$this->assertSame(
 			$redirectFixture4,
