@@ -51,11 +51,6 @@ class Tx_Redirects_Service_RedirectFactory {
 	}
 
 	/**
-	 * @var Tx_Redirects_Domain_Model_Request
-	 */
-	protected $request;
-
-	/**
 	 * @param Tx_Redirects_Domain_Model_Request $request
 	 * @param Tx_Redirects_Service_DeviceDetection $deviceDetection
 	 * @throws Exception
