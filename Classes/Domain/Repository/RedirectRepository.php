@@ -57,13 +57,13 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persi
 			SELECT *, IF(tx_redirects_domain_model_redirect.source_domain = "0",1,0) AS masked
 			FROM tx_redirects_domain_model_redirect
 			WHERE
-					(tx_redirects_domain_model_redirect.source_domain = "0" OR tx_redirects_domain_model_redirect.source_domain = (SELECT uid FROM sys_domain WHERE domainName = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($domainName) . ') )
+					(tx_redirects_domain_model_redirect.source_domain = "0" OR tx_redirects_domain_model_redirect.source_domain = (SELECT uid FROM sys_domain WHERE domainName = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($domainName, 'sys_domain') . ') )
 				AND
-					(tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($originalPath) . ' OR tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($alternativePath) . ' )
+					(tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($originalPath, 'tx_redirects_domain_model_redirect') . ' OR tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($alternativePath, 'tx_redirects_domain_model_redirect') . ' )
 				AND
-					(tx_redirects_domain_model_redirect.country_code = "" OR tx_redirects_domain_model_redirect.country_code = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($countryCode) . ')
+					(tx_redirects_domain_model_redirect.country_code = "" OR tx_redirects_domain_model_redirect.country_code = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($countryCode, 'tx_redirects_domain_model_redirect') . ')
 				AND
-					(tx_redirects_domain_model_redirect.accept_language = "" OR tx_redirects_domain_model_redirect.accept_language = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($accpetedLanguage) . ')
+					(tx_redirects_domain_model_redirect.accept_language = "" OR tx_redirects_domain_model_redirect.accept_language = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($accpetedLanguage, 'tx_redirects_domain_model_redirect') . ')
 				AND
 					pid IN(' . $pidList . ')
 				AND
