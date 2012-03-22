@@ -65,7 +65,7 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 
 	/**
 	 * @test
-	 * @expectedException Exception
+	 * @expectedException Tx_Redirects_Service_Exception_NoRedirectFound
 	 * @return void
 	 */
 	public function throwsException() {
@@ -128,7 +128,7 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 	/**
 	 * @test
 	 * @return void
-	 * @expectedException Exception
+	 * @expectedException Tx_Redirects_Service_Exception_NoRedirectFound
 	 */
 	public function excludeRedirectByRemoteAddressThrowsException() {
 		$redirectFixture = new Tx_Redirects_Domain_Model_Redirect();

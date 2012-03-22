@@ -72,7 +72,7 @@ class Tx_Requests_Servic_RedirectFactoryDatabaseTest extends Tx_Extbase_Tests_Un
 
 	/**
 	 * @test
-	 * @expectedException Exception
+	 * @expectedException Tx_Redirects_Service_Exception_NoRedirectFound
 	 * @return void
 	 */
 	public function throwsException() {
