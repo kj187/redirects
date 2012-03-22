@@ -84,7 +84,8 @@ class Tx_Redirects_Controller_RedirectController extends Tx_Extbase_MVC_Controll
 			header('Location: ' . $redirect->getTarget(), TRUE, $redirect->getHeader());
 			exit();
 		} catch (Tx_Redirects_Service_Exception_NoRedirectFound $e) {
-			// no additional action required
+				// no additional action required
+			t3lib_div::sysLog($e->getMessage(), 'tx_redirects', 1);
 		} catch (Exception $e) {
 			t3lib_div::sysLog($e->getMessage(), 'tx_redirects', 3);
 		}
