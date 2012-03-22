@@ -51,6 +51,8 @@ class Tx_Redirects_Service_RedirectFactory {
 	}
 
 	/**
+	 * Build the redirect object out of the request and device given as argument.
+	 *
 	 * @param Tx_Redirects_Domain_Model_Request $request
 	 * @param Tx_Redirects_Service_DeviceDetection $deviceDetection
 	 * @throws Tx_Redirects_Service_Exception_NoRedirectFound
