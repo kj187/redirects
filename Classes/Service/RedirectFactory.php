@@ -53,7 +53,7 @@ class Tx_Redirects_Service_RedirectFactory {
 	/**
 	 * @param Tx_Redirects_Domain_Model_Request $request
 	 * @param Tx_Redirects_Service_DeviceDetection $deviceDetection
-	 * @throws Exception
+	 * @throws Tx_Redirects_Service_Exception_NoRedirectFound
 	 * @return Tx_Redirects_Domain_Model_Redirect
 	 */
 	public function create(Tx_Redirects_Domain_Model_Request $request, Tx_Redirects_Service_DeviceDetection $deviceDetection) {
@@ -74,7 +74,7 @@ class Tx_Redirects_Service_RedirectFactory {
 		}
 
 		if (!$redirectMatch instanceof Tx_Redirects_Domain_Model_Redirect) {
-			throw new Exception('No redirect available.');
+			throw new Tx_Redirects_Service_Exception_NoRedirectFound('No redirect available for request: ' . $request);
 		}
 
 		if ($redirectMatch->getKeepGet() === TRUE) {

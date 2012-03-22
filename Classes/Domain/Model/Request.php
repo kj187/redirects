@@ -227,5 +227,14 @@ class Tx_Redirects_Domain_Model_Request {
 	public function getParameters() {
 		return $this->parameters;
 	}
+
+	/**
+	 * Return HTTP_HOST and path.
+	 *
+	 * @return string
+	 */
+	public function __toString() {
+		return $this->domain . $this->getPath();
+	}
 }
 ?>
