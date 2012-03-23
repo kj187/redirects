@@ -213,7 +213,7 @@ class Tx_Redirects_Domain_Model_Request {
 		unset($parameters['chash']);
 
 		foreach ($parameters as $k => $v) {
-			if ($parameters[$k] == '' || $parameters[$k] === 0 || strlen($parameters[$k]) > self::MAX_PARAM_LENGTH) {
+			if ( ($parameters[$k] == '' || $parameters[$k] === 0) || (is_string($parameters[$k]) && strlen($parameters[$k]) > self::MAX_PARAM_LENGTH)) {
 				unset($parameters[$k]);
 			}
 		}
