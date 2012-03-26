@@ -78,6 +78,7 @@ class Tx_Requests_Servic_RedirectFactoryDatabaseTest extends Tx_Extbase_Tests_Un
 	 * @return void
 	 */
 	public function throwsException() {
+		$this->deviceDetection->expects($this->any())->method('getPossibleDevices')->will($this->returnValue(array()));
 		$redirectFactory = new Tx_Redirects_Domain_Repository_RedirectRepository();
 		$this->redirectFactory->injectRedirectRepository($redirectFactory);
 		$this->redirectFactory->create($this->request, $this->deviceDetection);
