@@ -142,8 +142,9 @@ $TCA['tx_redirects_domain_model_redirect'] = array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect.exclude_ips',
 			'config' => array(
-				'type' => 'input',
-				'size' => 30,
+				'type' => 'text',
+				'cols' => 20,
+				'rows' => 10,
 				'eval' => 'trim'
 			),
 		),

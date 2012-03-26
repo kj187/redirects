@@ -135,7 +135,7 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		$redirectFixture->setTarget('http://www.aoemedia.de/userAgent');
 		$redirectFixture->setHeader(301);
 		$redirectFixture->setDevice(2);
-		$redirectFixture->setExcludeIps('127.0.0.1,127.0.0.2');
+		$redirectFixture->setExcludeIps('127.0.0.1' . PHP_EOL . '127.0.0.2');
 
 		$request = $this->getMock('Tx_Redirects_Domain_Model_Request', array('getRemoteAddress'), array(), '', FALSE);
 		$request->expects($this->any())->method('getRemoteAddress')->will($this->returnValue('127.0.0.2'));
@@ -156,7 +156,7 @@ class Tx_Requests_Servic_RedirectFactoryTest extends Tx_Extbase_Tests_Unit_BaseT
 		$redirectFixture->setTarget('http://www.aoemedia.de/userAgent');
 		$redirectFixture->setHeader(301);
 		$redirectFixture->setDevice(2);
-		$redirectFixture->setExcludeIps('127.0.0.1,127.0.0.2');
+		$redirectFixture->setExcludeIps('127.0.0.1'. PHP_EOL . '127.0.0.2');
 
 		$redirectFixture2 = new Tx_Redirects_Domain_Model_Redirect();
 		$redirectFixture2->setTarget('http://www.aoemedia.de/userAgent');

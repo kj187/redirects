@@ -253,7 +253,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 		);
 
 		$ipArray = array('127.0.0.1', '127.0.0.2');
-		$this->fixture->setExcludeIps('127.0.0.1, 127.0.0.2');
+		$this->fixture->setExcludeIps('127.0.0.1' . PHP_EOL . '127.0.0.2');
 
 		$this->assertSame(
 			$ipArray,

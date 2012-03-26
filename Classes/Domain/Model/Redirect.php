@@ -309,7 +309,7 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	 * @return array $excludeIps
 	 */
 	public function getExcludeIps() {
-		return t3lib_div::trimExplode(',', $this->excludeIps, TRUE);
+		return t3lib_div::trimExplode(PHP_EOL, $this->excludeIps, TRUE);
 	}
 
 	/**
