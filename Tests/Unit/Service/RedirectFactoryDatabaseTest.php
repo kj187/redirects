@@ -63,10 +63,12 @@ class Tx_Requests_Servic_RedirectFactoryDatabaseTest extends Tx_Extbase_Tests_Un
 		$this->request = $this->getMock('Tx_Redirects_Domain_Model_Request', array('dummy'), array(), '', FALSE);
 		$this->deviceDetection = $this->getMock('Tx_Redirects_Service_DeviceDetection', array('getPossibleDevices'));
 		$this->testingFramework = new Tx_Phpunit_Framework('tx_redirects');
+		$this->testingFramework->createFakeFrontEnd();
 	}
 
 	public function tearDown() {
 		$this->testingFramework->cleanUp();
+		$this->testingFramework->discardFakeFrontEnd();
 		unset($this->redirectFactory, $this->testingFramework);
 	}
 
