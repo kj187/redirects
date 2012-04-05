@@ -45,6 +45,6 @@ CREATE TABLE tx_redirects_domain_model_redirect (
 
 	PRIMARY KEY (uid),
 	KEY parent (pid),
-	KEY t3ver_oid (t3ver_oid,t3ver_wsid)
-
+	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
+	KEY source_path (source_domain, source_path)
 );
