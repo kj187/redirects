@@ -47,6 +47,7 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persi
 		$domainName       = $request->getDomain();
 		$originalPath     = $request->getPath();
 		$alternativePath  = rtrim($originalPath, '/');
+		$alternativePath2  = rtrim($originalPath, '/') . '/';
 		$countryCode      = $request->getCountryCode();
 		$accpetedLanguage = $request->getAcceptLanguage();
 		$devices[]        = '0';
@@ -59,7 +60,7 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persi
 			WHERE
 					(tx_redirects_domain_model_redirect.source_domain = "0" OR tx_redirects_domain_model_redirect.source_domain = (SELECT uid FROM sys_domain WHERE domainName = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($domainName, 'sys_domain') . ') )
 				AND
-					(tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($originalPath, 'tx_redirects_domain_model_redirect') . ' OR tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($alternativePath, 'tx_redirects_domain_model_redirect') . ' )
+					(tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($originalPath, 'tx_redirects_domain_model_redirect') . ' OR tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($alternativePath, 'tx_redirects_domain_model_redirect') . ' OR tx_redirects_domain_model_redirect.source_path = ' . $GLOBALS['TYPO3_DB']->fullQuoteStr($alternativePath2, 'tx_redirects_domain_model_redirect') . ' )
 				AND
 					(tx_redirects_domain_model_redirect.country_code = "" OR tx_redirects_domain_model_redirect.country_code = '. $GLOBALS['TYPO3_DB']->fullQuoteStr($countryCode, 'tx_redirects_domain_model_redirect') . ')
 				AND
