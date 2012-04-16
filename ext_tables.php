@@ -23,6 +23,7 @@ $TCA['tx_redirects_domain_model_redirect'] = array(
 			'endtime' => 'endtime',
 		),
 		'dynamicConfigFile' => t3lib_extMgm::extPath('redirects') . 'Configuration/TCA/Redirect.php',
+		'searchFields' => 'title,source_path,target,header,exclude_ips',
 		'iconfile' => t3lib_extMgm::extRelPath('redirects') . 'Resources/Public/Icons/tx_redirects_domain_model_redirect.gif'
 	),
 );
