@@ -131,6 +131,11 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	protected $parameters = array();
 
 	/**
+	 * @var boolean
+	 */
+	protected $hidden;
+
+	/**
 	 * Returns the title
 	 *
 	 * @return string $title
@@ -455,6 +460,20 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 		}
 
 		return $priority;
+	}
+
+	/**
+	 * @param boolean $hidden
+	 */
+	public function setHidden($hidden) {
+		$this->hidden = (boolean) $hidden;
+	}
+
+	/**
+	 * @return boolean
+	 */
+	public function getHidden() {
+		return $this->hidden;
 	}
 }
 ?>
