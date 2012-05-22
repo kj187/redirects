@@ -100,9 +100,9 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	/**
 	 * If a client accepts the selected language.
 	 *
-	 * @var integer
+	 * @var string
 	 */
-	protected $acceptLanguage = 0;
+	protected $acceptLanguage = '';
 
 	/**
 	 * If client is of lelected device type
