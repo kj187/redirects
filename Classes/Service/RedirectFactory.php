@@ -80,7 +80,7 @@ class Tx_Redirects_Service_RedirectFactory {
 		}
 
 		if ($redirectMatch->getKeepGet() === TRUE) {
-			$redirectMatch->addParameters($request->getParameters());
+			$redirectMatch->setParameters($request->getParameters());
 		}
 
 		if ($redirectMatch->getDisableCount() === FALSE) {
