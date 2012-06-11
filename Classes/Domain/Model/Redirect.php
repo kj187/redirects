@@ -349,7 +349,7 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	/**
 	 * Returns the acceptLanguage
 	 *
-	 * @return integer $acceptLanguage
+	 * @return string $acceptLanguage
 	 */
 	public function getAcceptLanguage() {
 		return $this->acceptLanguage;

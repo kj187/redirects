@@ -288,7 +288,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 	 */
 	public function getAcceptLanguageReturnsInitialValueForInteger() {
 		$this->assertSame(
-			0,
+			'',
 			$this->fixture->getAcceptLanguage()
 		);
 	}
