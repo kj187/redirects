@@ -249,11 +249,20 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	}
 
 	/**
-	 * Returns the target
+	 * Returns the redirect target
 	 *
 	 * @return string $target
 	 */
 	public function getTarget() {
+		return $this->target;
+	}
+
+	/**
+	 * Returns the redirect target
+	 *
+	 * @return string $target
+	 */
+	public function getRedirectTarget() {
 		//TODO Add support for typoLink url generation based on given page id
 
 		if ($this->forceSsl === TRUE) {

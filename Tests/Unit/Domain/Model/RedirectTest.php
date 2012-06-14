@@ -132,7 +132,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 
 		$this->assertEquals(
 			'https://www.aoemedia.de/',
-			$this->fixture->getTarget()
+			$this->fixture->getRedirectTarget()
 		);
 	}
 
@@ -171,7 +171,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 
 		$this->assertSame(
 			'http://www.aoemedia.de',
-			$this->fixture->getTarget()
+			$this->fixture->getRedirectTarget()
 		);
 	}
 
@@ -204,7 +204,7 @@ class Tx_Redirects_Domain_Model_RedirectTest extends Tx_Extbase_Tests_Unit_BaseT
 
 		$this->assertSame(
 			$expectedTarget,
-			$this->fixture->getTarget()
+			$this->fixture->getRedirectTarget()
 		);
 	}
 

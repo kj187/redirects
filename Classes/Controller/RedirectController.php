@@ -81,7 +81,7 @@ class Tx_Redirects_Controller_RedirectController extends Tx_Extbase_MVC_Controll
 	public function indexAction() {
 		try {
 			$redirect = $this->redirectFactory->create($this->requestModel, $this->deviceDetection);
-			header('Location: ' . $redirect->getTarget(), TRUE, $redirect->getHeader());
+			header('Location: ' . $redirect->getRedirectTarget(), TRUE, $redirect->getHeader());
 			exit();
 		} catch (Tx_Redirects_Service_Exception_NoRedirectFound $e) {
 				// no additional action required
