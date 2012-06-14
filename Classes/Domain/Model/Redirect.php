@@ -256,11 +256,8 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	public function getTarget() {
 		//TODO Add support for typoLink url generation based on given page id
 
-		if (strpos($this->target, 'http') !== 0) {
-			$this->target = t3lib_div::locationHeaderUrl($this->target);
-		}
-
 		if ($this->forceSsl === TRUE) {
+			$this->prependSuggestedDomain();
 			$this->target = str_replace('http://','https://', $this->target);
 		}
 
@@ -279,6 +276,22 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 		return $this->target;
 	}
 
+	/**
+	 * Try to prepend default protocol and host to the given target string.
+	 *
+	 * @return void
+	 */
+	protected function prependSuggestedDomain() {
+		$initialCount = strlen($this->target);
+
+		if (strpos($this->target, 'http') !== 0) {
+			$tmpTarget = t3lib_div::locationHeaderUrl($this->target);
+			if ((strlen($tmpTarget) - $initialCount) > 10) {
+				$this->target = $tmpTarget;
+			}
+		}
+
+	}
 	/**
 	 * Sets the target
 	 *
