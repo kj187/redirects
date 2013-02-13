@@ -70,7 +70,12 @@ class Tx_Redirects_Hook_PreProcess {
 			'userFunc'      => 'tx_extbase_core_bootstrap->run',
 			'pluginName'    => 'Pi1',
 			'extensionName' => 'Redirects',
-			'settings'      => 	''
+			'settings'      => '',
+			'mvc' => array(
+				'requestHandlers' => array(
+					'Tx_Extbase_MVC_Web_FrontendRequestHandler' => 'Tx_Extbase_MVC_Web_FrontendRequestHandler'
+				)
+			)
 		);
 
 		$GLOBALS['TSFE'] = t3lib_div::makeInstance('tslib_fe', $GLOBALS['TYPO3_CONF_VARS'], t3lib_div::_GP('id'), t3lib_div::_GP('type'), true);
