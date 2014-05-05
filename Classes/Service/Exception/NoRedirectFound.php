@@ -31,6 +31,6 @@
  * @date: 22.03.12
  * @time: 15:47
  */
-class Tx_Redirects_Service_Exception_NoRedirectFound extends Tx_Extbase_Exception  {
+class Tx_Redirects_Service_Exception_NoRedirectFound extends \TYPO3\CMS\Extbase\Exception  {
 
 }

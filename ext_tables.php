@@ -3,8 +3,8 @@ if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-t3lib_extMgm::addLLrefForTCAdescr('tx_redirects_domain_model_redirect', 'EXT:redirects/Resources/Private/Language/locallang_csh_tx_redirects_domain_model_redirect.xml');
-t3lib_extMgm::allowTableOnStandardPages('tx_redirects_domain_model_redirect');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_redirects_domain_model_redirect', 'EXT:redirects/Resources/Private/Language/locallang_csh_tx_redirects_domain_model_redirect.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_redirects_domain_model_redirect');
 $TCA['tx_redirects_domain_model_redirect'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:redirects/Resources/Private/Language/locallang_db.xml:tx_redirects_domain_model_redirect',
@@ -22,12 +22,10 @@ $TCA['tx_redirects_domain_model_redirect'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'dynamicConfigFile' => t3lib_extMgm::extPath('redirects') . 'Configuration/TCA/Redirect.php',
+		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('redirects') . 'Configuration/TCA/Redirect.php',
 		'searchFields' => 'title,source_path,target,header,exclude_ips',
-		'iconfile' => t3lib_extMgm::extRelPath('redirects') . 'Resources/Public/Icons/tx_redirects_domain_model_redirect.gif'
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('redirects') . 'Resources/Public/Icons/tx_redirects_domain_model_redirect.gif'
 	),
 );
 
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['redirects'][] = 'tx_redirects_utility_redirectsrequirementscheck';
-
-?>

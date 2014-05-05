@@ -82,15 +82,15 @@ class Tx_Redirects_Domain_Model_Request {
 	 * Initialize Request arguments to
 	 */
 	public function __construct() {
-		$this->setDomain(t3lib_div::getIndpEnv('HTTP_HOST'));
-		$this->setPath(t3lib_div::getIndpEnv('REQUEST_URI'));
-		$this->setAcceptLanguage(t3lib_div::getIndpEnv('HTTP_ACCEPT_LANGUAGE'));
+		$this->setDomain(\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('HTTP_HOST'));
+		$this->setPath(\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('REQUEST_URI'));
+		$this->setAcceptLanguage(\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('HTTP_ACCEPT_LANGUAGE'));
 		if (function_exists('apache_getenv')) {
 			$this->setCountryCode(apache_getenv('GEOIP_COUNTRY_CODE'));
 		}
-		$this->setRemoteAddress(t3lib_div::getIndpEnv('REMOTE_ADDR'));
-		$this->setUserAgent(t3lib_div::getIndpEnv('HTTP_USER_AGENT'));
-		$this->setParmeters(t3lib_div::_GET());
+		$this->setRemoteAddress(\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('REMOTE_ADDR'));
+		$this->setUserAgent(\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('HTTP_USER_AGENT'));
+		$this->setParmeters(\TYPO3\CMS\Core\Utility\GeneralUtility::_GET());
 	}
 
 	/**
@@ -135,7 +135,7 @@ class Tx_Redirects_Domain_Model_Request {
 		if (isset($acceptLanguage) && strlen($acceptLanguage) > 1) {
 			$matches = array();
 			$lang = array();
-			$languageStruct = t3lib_div::trimExplode(',', $acceptLanguage, TRUE);
+			$languageStruct = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $acceptLanguage, TRUE);
 
 			foreach ($languageStruct as $value) {
 					// check for q-value and create associative array. No q-value means priority 10
@@ -237,4 +237,3 @@ class Tx_Redirects_Domain_Model_Request {
 		return $this->domain . $this->getPath();
 	}
 }
-?>

@@ -1,6 +1,6 @@
 <?php
 
-Tx_Extbase_Utility_Extension::configurePlugin(
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'redirects',
 	'Pi1',
 	array(

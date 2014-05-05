@@ -31,7 +31,7 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persistence_Repository {
+class Tx_Redirects_Domain_Repository_RedirectRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	/**
 	 * Fetch all redirect records based on given $domain and $path property.
@@ -88,4 +88,3 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends Tx_Extbase_Persi
 		$query->statement('UPDATE tx_redirects_domain_model_redirect SET count = count + 1 WHERE uid = ' . $redirect->getUid())->execute();
 	}
 }
-?>

@@ -30,7 +30,7 @@
  * @package redirects
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
-class Tx_Redirects_Controller_RedirectController extends Tx_Extbase_MVC_Controller_ActionController {
+class Tx_Redirects_Controller_RedirectController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
 	 * @var Tx_Redirects_Domain_Model_Request
@@ -85,10 +85,9 @@ class Tx_Redirects_Controller_RedirectController extends Tx_Extbase_MVC_Controll
 			exit();
 		} catch (Tx_Redirects_Service_Exception_NoRedirectFound $e) {
 				// no additional action required
-			t3lib_div::sysLog($e->getMessage(), 'tx_redirects', 1);
+			\TYPO3\CMS\Core\Utility\GeneralUtility::sysLog($e->getMessage(), 'tx_redirects', 1);
 		} catch (Exception $e) {
-			t3lib_div::sysLog($e->getMessage(), 'tx_redirects', 3);
+			\TYPO3\CMS\Core\Utility\GeneralUtility::sysLog($e->getMessage(), 'tx_redirects', 3);
 		}
 	}
 }
-?>

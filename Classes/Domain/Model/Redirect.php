@@ -31,7 +31,7 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_AbstractValueObject {
+class Tx_Redirects_Domain_Model_Redirect extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 
 	/**
 	 * Internal title
@@ -271,7 +271,7 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 		}
 
 		if ($this->keepGet === TRUE) {
-			$parameterString = t3lib_div::implodeArrayForUrl('', $this->parameters);
+			$parameterString = \TYPO3\CMS\Core\Utility\GeneralUtility::implodeArrayForUrl('', $this->parameters);
 
 			if (strlen($parameterString) > 0) {
 				if(preg_match('/\?[^=]*?=[^&]*?/i', $this->target)) {
@@ -294,7 +294,7 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 		$initialCount = strlen($this->target);
 
 		if (strpos($this->target, 'http') !== 0) {
-			$tmpTarget = t3lib_div::locationHeaderUrl($this->target);
+			$tmpTarget = \TYPO3\CMS\Core\Utility\GeneralUtility::locationHeaderUrl($this->target);
 			if ((strlen($tmpTarget) - $initialCount) > 10) {
 				$this->target = $tmpTarget;
 			}
@@ -336,7 +336,7 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 	 * @return array $excludeIps
 	 */
 	public function getExcludeIps() {
-		return t3lib_div::trimExplode(PHP_EOL, $this->excludeIps, TRUE);
+		return \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(PHP_EOL, $this->excludeIps, TRUE);
 	}
 
 	/**
@@ -498,4 +498,3 @@ class Tx_Redirects_Domain_Model_Redirect extends Tx_Extbase_DomainObject_Abstrac
 		return $this->hidden;
 	}
 }
-?>

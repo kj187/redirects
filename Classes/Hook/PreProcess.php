@@ -24,8 +24,8 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-tslib_eidtools::connectDB();
-require_once t3lib_extMgm::extPath('redirects') . 'ext_tables.php';
+\TYPO3\CMS\Frontend\Utility\EidUtility::connectDB();
+require_once \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('redirects') . 'ext_tables.php';
 $GLOBALS['TCA'] = $TCA;
 
 /**
@@ -73,17 +73,18 @@ class Tx_Redirects_Hook_PreProcess {
 			'settings'      => '',
 			'mvc' => array(
 				'requestHandlers' => array(
-					'Tx_Extbase_MVC_Web_FrontendRequestHandler' => 'Tx_Extbase_MVC_Web_FrontendRequestHandler'
+					#'Tx_Extbase_MVC_Web_FrontendRequestHandler' => 'Tx_Extbase_MVC_Web_FrontendRequestHandler'
+					'TYPO3\CMS\Extbase\Mvc\Web\FrontendRequestHandler' => 'TYPO3\CMS\Extbase\Mvc\Web\FrontendRequestHandler'
 				)
 			)
 		);
 
-		$GLOBALS['TSFE'] = t3lib_div::makeInstance('tslib_fe', $GLOBALS['TYPO3_CONF_VARS'], t3lib_div::_GP('id'), t3lib_div::_GP('type'), true);
-		$GLOBALS['TSFE']->sys_page = t3lib_div::makeInstance('t3lib_pageSelect');
+		$GLOBALS['TSFE'] = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tslib_fe', $GLOBALS['TYPO3_CONF_VARS'], \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('id'), \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('type'), true);
+		$GLOBALS['TSFE']->sys_page = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('t3lib_pageSelect');
 
-		require_once t3lib_extMgm::extPath('extbase') . 'Classes/Core/Bootstrap.php';
-		$cObj            = t3lib_div::makeInstance('tslib_cObj');
-		$bootstrap       = t3lib_div::makeInstance('Tx_Extbase_Core_Bootstrap');
+		require_once \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('extbase') . 'Classes/Core/Bootstrap.php';
+		$cObj            = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tslib_cObj');
+		$bootstrap       = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('Tx_Extbase_Core_Bootstrap');
 		$bootstrap->cObj = $cObj;
 
 		$bootstrap->run('', $config);

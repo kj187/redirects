@@ -639,5 +639,3 @@ $TCA['tx_redirects_domain_model_redirect'] = array(
 		),
 	),
 );
-
-?>

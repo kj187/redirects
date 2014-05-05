@@ -31,7 +31,7 @@
  * @date: 14.03.12
  * @time: 14:25
  */
-class Tx_Redirects_Utility_RedirectsRequirementsCheck implements tx_reports_StatusProvider {
+class Tx_Redirects_Utility_RedirectsRequirementsCheck implements \TYPO3\CMS\Reports\StatusProviderInterface {
 	/**
 	 * Compiles a collection of system status checks as a status report.
 	 *
@@ -57,15 +57,15 @@ class Tx_Redirects_Utility_RedirectsRequirementsCheck implements tx_reports_Stat
 			if ($countryCode != '') {
 				$value = 'Country Detected';
 				$message = 'Your detected country code is "' . $countryCode . '"';
-				$status = tx_reports_reports_status_Status::OK;
+				$status = \TYPO3\CMS\Reports\Status::OK;
 			} else {
 				$value = 'Country could not detected.';
 				$message = 'Please be sure that the maxmind apache module is loaded correctly.';
-				$status = tx_reports_reports_status_Status::INFO;
+				$status = \TYPO3\CMS\Reports\Status::INFO;
 			}
 		}
 
-		return t3lib_div::makeInstance('tx_reports_reports_status_Status',
+		return \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tx_reports_reports_status_Status',
 			'Apache maxmind',
 			$value,
 			$message,
@@ -83,11 +83,11 @@ class Tx_Redirects_Utility_RedirectsRequirementsCheck implements tx_reports_Stat
 		if (function_exists('apache_getenv')) {
 			$value = 'Available';
 			$message = '';
-			$status = tx_reports_reports_status_Status::OK;
+			$status = \TYPO3\CMS\Reports\Status::OK;
 		} else {
 			$value = 'Function not available!';
 			$message = 'The function is required to fetch the country code from Apaches environment variable "GEOIP_COUNTRY_CODE"';
-			$status = tx_reports_reports_status_Status::ERROR;
+			$status = \TYPO3\CMS\Reports\Status::ERROR;
 		}
 
 		return t3lib_div::makeInstance('tx_reports_reports_status_Status',
