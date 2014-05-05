@@ -42,8 +42,10 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends \TYPO3\CMS\Extba
 	 */
 	public function findAllByRequest(Tx_Redirects_Domain_Model_Request $request, array $devices) {
 		$query = $this->createQuery();
-		$query->getQuerySettings()->getRespectEnableFields(TRUE);
-		$query->getQuerySettings()->getRespectSysLanguage(FALSE);
+		$query->getQuerySettings()->setIgnoreEnableFields(FALSE);
+		$query->getQuerySettings()->setIncludeDeleted(FALSE);
+		$query->getQuerySettings()->setRespectSysLanguage(FALSE);
+
 		$domainName       = $request->getDomain();
 		$originalPath     = $request->getPath();
 		$alternativePath  = rtrim($originalPath, '/');
