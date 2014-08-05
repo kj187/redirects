@@ -85,7 +85,7 @@ class Tx_Redirects_Domain_Repository_RedirectRepository extends \TYPO3\CMS\Extba
 	 */
 	public function incrementCounter(Tx_Redirects_Domain_Model_Redirect $redirect) {
 		$query = $this->createQuery();
-		$query->getQuerySettings()->setReturnRawQueryResult(TRUE);
+		$query->getQuerySettings()->setReturnRawQueryResult(FALSE);
 
 		$query->statement('UPDATE tx_redirects_domain_model_redirect SET count = count + 1 WHERE uid = ' . $redirect->getUid())->execute();
 	}
